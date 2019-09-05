@@ -50,7 +50,16 @@ public class GameMethods {
         return sum;
     }
     public int twoPair(int[] arr) {
-
-
+        ArrayList<Integer> duplicates = findDuplicates(arr);
+        int sum = 0;
+        int pair1 = Collections.max(duplicates);
+        int pair2 = Collections.min(duplicates);
+        if ((pair1 > 0 && pair2 > 0) && (pair1 != pair2)) {
+            sum += pair1 * 2;
+            sum += pair2 * 2;
+        } else {
+            sum = 0;
+        }
+        return sum;
     }
 }
