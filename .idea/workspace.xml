@@ -34,10 +34,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameMethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+            <state relative-caret-position="389">
+              <caret line="51" selection-start-line="51" selection-start-column="2" selection-end-line="54" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#77#108#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+            <state relative-caret-position="690">
+              <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,8 +71,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/GameMethods.java" />
         <option value="$PROJECT_DIR$/Tests/YahtzeeTests.java" />
+        <option value="$PROJECT_DIR$/src/GameMethods.java" />
       </list>
     </option>
   </component>
@@ -130,7 +131,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.YahtzeeTests.pairTest">
+  <component name="RunManager" selected="JUnit.YahtzeeTests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Yahtzee" />
@@ -170,16 +171,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="YahtzeeTests.twoPairTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Yahtzee" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="YahtzeeTests" />
+      <option name="METHOD_NAME" value="twoPairTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.YahtzeeTests.ChanceTest" />
       <item itemvalue="JUnit.YahtzeeTests" />
       <item itemvalue="JUnit.YahtzeeTests.pairTest" />
+      <item itemvalue="JUnit.YahtzeeTests.twoPairTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.YahtzeeTests.pairTest" />
         <item itemvalue="JUnit.YahtzeeTests" />
+        <item itemvalue="JUnit.YahtzeeTests.twoPairTest" />
+        <item itemvalue="JUnit.YahtzeeTests.pairTest" />
         <item itemvalue="JUnit.YahtzeeTests.ChanceTest" />
       </list>
     </recent_temporary>
@@ -194,29 +207,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567577396181</updated>
-      <workItem from="1567577399336" duration="10274000" />
+      <workItem from="1567577399336" duration="11475000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 34m 22s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 34m 32s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 34m 43s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 35m 03s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 35m 19s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 35m 37s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 37m 17s.xml">
       <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
     </history-entry>
@@ -229,9 +224,27 @@
     <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 38m 47s.xml">
       <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 39m 06s.xml">
+      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 39m 17s.xml">
+      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 39m 41s.xml">
+      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 39m 48s.xml">
+      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 44m 41s.xml">
+      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_twoPairTest - 2019.09.05 at 15h 46m 52s.xml">
+      <configuration name="YahtzeeTests.twoPairTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10274000" />
+    <option name="totallyTimeSpent" value="11475000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1680" height="966" extended-state="6" />
@@ -316,18 +329,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameMethods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+        <state relative-caret-position="389">
+          <caret line="51" selection-start-line="51" selection-start-column="2" selection-end-line="54" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#77#108#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+        <state relative-caret-position="690">
+          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
