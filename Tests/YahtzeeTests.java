@@ -1,6 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 import java.util.ArrayList;
+import java.util.OptionalInt;
 
 public class YahtzeeTests {
     GameMethods game = new GameMethods();
@@ -33,10 +34,10 @@ public class YahtzeeTests {
         Assert.assertEquals(expected,actual);
     }
     @Test
-    public void addUpSameNumbersTestFive() {
-        int[] hand = {5,5,5,4,3};
-        int expected = 15;
-        int actual = game.addUpSameNumbers(hand,5);
+    public void pairTest() {
+        int[] hand = {6,5,4,2,2};
+        int expected = 4;
+        int actual = game.pair(hand);
         Assert.assertEquals(expected,actual);
     }
 }
