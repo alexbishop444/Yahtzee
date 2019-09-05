@@ -35,9 +35,16 @@ public class YahtzeeTests {
     }
     @Test
     public void pairTest() {
-        int[] hand = {6,5,4,2,2};
-        int expected = 4;
+        int[] hand = {3,5,3,1,1};
+        int expected = 6;
         int actual = game.pair(hand);
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void twoPairTest() {
+        int[] hand = {1,1,2,3,3};
+        int expected = 8;
+        int actual = game.twoPair(hand);
         Assert.assertEquals(expected,actual);
     }
 }
