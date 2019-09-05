@@ -31,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameMethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="51" selection-start-line="51" selection-start-column="2" selection-end-line="54" selection-end-column="7" />
+            <state relative-caret-position="434">
+              <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#77#108#0" expanded="true" />
@@ -44,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+            <state relative-caret-position="374">
+              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -207,29 +207,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567577396181</updated>
-      <workItem from="1567577399336" duration="11475000" />
+      <workItem from="1567577399336" duration="12032000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 37m 17s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 37m 49s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 38m 36s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 38m 47s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 39m 06s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 39m 17s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="YahtzeeTests_pairTest - 2019.09.05 at 15h 39m 41s.xml">
       <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
     </history-entry>
@@ -242,9 +224,27 @@
     <history-entry file="YahtzeeTests_twoPairTest - 2019.09.05 at 15h 46m 52s.xml">
       <configuration name="YahtzeeTests.twoPairTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="YahtzeeTests - 2019.09.05 at 16h 00m 23s.xml">
+      <configuration name="YahtzeeTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests - 2019.09.05 at 16h 00m 39s.xml">
+      <configuration name="YahtzeeTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests - 2019.09.05 at 16h 00m 47s.xml">
+      <configuration name="YahtzeeTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests - 2019.09.05 at 16h 00m 55s.xml">
+      <configuration name="YahtzeeTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests - 2019.09.05 at 16h 10m 07s.xml">
+      <configuration name="YahtzeeTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests - 2019.09.05 at 16h 10m 28s.xml">
+      <configuration name="YahtzeeTests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11475000" />
+    <option name="totallyTimeSpent" value="12032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1680" height="966" extended-state="6" />
@@ -327,23 +327,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameMethods.java">
+    <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="51" selection-start-line="51" selection-start-column="2" selection-end-line="54" selection-end-column="7" />
+        <state relative-caret-position="374">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#77#108#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
+    <entry file="file://$PROJECT_DIR$/src/GameMethods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+        <state relative-caret-position="434">
+          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#77#108#0" expanded="true" />
           </folding>
         </state>
       </provider>
