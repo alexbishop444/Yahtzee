@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.Arrays;
 
 public class GameMethods {
-    int sumOfAllNumbers(int[] arr) {
+    int chance(int[] arr) {
         int sum = IntStream.of(arr).sum();
         return sum;
     }
@@ -16,5 +16,14 @@ public class GameMethods {
         } else {
             return 0;
         }
+    }
+    int addUpSameNumbers(int[] arr, int arg) {
+        int sum = 0;
+        for (int item:arr) {
+            if (item == arg) {
+                sum += item;
+            }
+        }
+        return sum;
     }
 }
