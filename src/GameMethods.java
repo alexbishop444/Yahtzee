@@ -4,6 +4,13 @@ import java.util.Collections;
 @SuppressWarnings("Duplicates")
 
 public class GameMethods {
+    int counterOne = 0;
+    int counterTwo = 0;
+    int counterThree = 0;
+    int counterFour = 0;
+    int counterFive = 0;
+    int counterSix = 0;
+
     public int chance(int[] arr) {
         int sum = IntStream.of(arr).sum();
         return sum;
@@ -41,7 +48,7 @@ public class GameMethods {
     }
 
     public int pair(int[] arr) {
-        // For loop gets duplicate numbers, add its to the numbersDuplicated array, finds the highest number in that array since they can only be dupes then adds
+        // For loop gets duplicate numbers by only adding if there is a duplicate, add its to the numbersDuplicated array, finds the highest number in that array since they can only be dupes then adds
 //        that number twice
         int sum = 0;
         ArrayList<Integer> duplicates = findDuplicates(arr);
@@ -51,6 +58,7 @@ public class GameMethods {
     }
     public int twoPair(int[] arr) {
         ArrayList<Integer> duplicates = findDuplicates(arr);
+        System.out.println(duplicates);
         int sum = 0;
         int pair1 = Collections.max(duplicates);
         int pair2 = Collections.min(duplicates);
@@ -62,4 +70,65 @@ public class GameMethods {
         }
         return sum;
     }
+
+    public int timesCounters(int arg, int arg2) {
+        int sum = 0;
+        if (arg == 1) {
+            sum = arg2;
+        } else if (arg == 2) {
+            sum += 2 * arg2;
+        } else if (arg == 3) {
+            sum += 3 * arg2;
+        } else if (arg == 4) {
+            sum += 4 * arg2;
+        } else if (arg == 5) {
+            sum += 5 * arg2;
+        } else if (arg == 6) {
+            sum += 6 * arg2;
+        }
+        return sum;
+    }
+
+    public int threePair(int[] arr) {
+        ArrayList<Integer> duplicates = findDuplicates(arr);
+        int sum = 0;
+        for (Integer item:duplicates) {
+            System.out.println(item);
+            switch (item) {
+                case 1:
+                    counterOne += 1;
+                case 2:
+                    counterTwo += 1;
+                case 3:
+                    counterThree += 1;
+                case 4:
+                    counterFour += 1;
+                case 5:
+                    counterFive += 1;
+                case 6:
+                    counterSix += 1;
+            }
+        }
+        if(counterOne >= 3) {
+            sum = timesCounters(1,3);
+        } else if (counterTwo >= 3) {
+            sum = timesCounters(2,3);
+        } else if (counterThree >= 3) {
+            sum = timesCounters(3,3);
+        } else if (counterFour >= 3) {
+            sum = timesCounters(4,3);
+        } else if (counterFive >= 3) {
+            sum = timesCounters(5,3);
+        } else if (counterSix >= 3) {
+            sum = timesCounters(6,3);
+        } else {
+            return 0;
+        }
+        return sum;
+    }
+
+//    public int fourPair (int[] arr) {
+//
+//    }
+
 }

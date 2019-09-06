@@ -47,4 +47,18 @@ public class YahtzeeTests {
         int actual = game.twoPair(hand);
         Assert.assertEquals(expected,actual);
     }
+    @Test
+    public void threeOfAKindTest() {
+        int[] hand = {1,1,1,3,1};
+        int expected = 3;
+        int actual = game.threePair(hand);
+        Assert.assertEquals(expected,actual);
+    }
+//    @Test
+//    public void fourOfAKindTest() {
+//        int[] hand = {2,2,2,2,5};
+//        int expected = 8;
+//        int actual = game.fourPair(hand);
+//        Assert.assertEquals(expected,actual);
+//    }
 }
