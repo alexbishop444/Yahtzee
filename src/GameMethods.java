@@ -89,7 +89,7 @@ public class GameMethods {
         return sum;
     }
 
-    public int threePair(int[] arr) {
+    public int threeOrFourPair(int[] arr, int arg) {
         ArrayList<Integer> duplicates = findDuplicates(arr);
         int sum = 0;
         for (Integer item:duplicates) {
@@ -109,26 +109,22 @@ public class GameMethods {
                     counterSix += 1;
             }
         }
-        if(counterOne >= 3) {
-            sum = timesCounters(1,3);
+        if(counterOne >= arg) {
+            sum = timesCounters(1,arg);
         } else if (counterTwo >= 3) {
-            sum = timesCounters(2,3);
+            sum = timesCounters(2,arg);
         } else if (counterThree >= 3) {
-            sum = timesCounters(3,3);
+            sum = timesCounters(3,arg);
         } else if (counterFour >= 3) {
-            sum = timesCounters(4,3);
+            sum = timesCounters(4,arg);
         } else if (counterFive >= 3) {
-            sum = timesCounters(5,3);
+            sum = timesCounters(5,arg);
         } else if (counterSix >= 3) {
-            sum = timesCounters(6,3);
+            sum = timesCounters(6,arg);
         } else {
             return 0;
         }
         return sum;
     }
-
-//    public int fourPair (int[] arr) {
-//
-//    }
 
 }
