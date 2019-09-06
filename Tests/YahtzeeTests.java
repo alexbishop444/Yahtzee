@@ -88,20 +88,26 @@ public class YahtzeeTests {
     }
     @Test
     public void threeOfAKindTest() {
-        int[] handWithNoThrees = {2,2,3,3,4};
-        int expectedNoThrees = 0;
-        int actualNoThrees = game.threeOrFourPair(handWithNoThrees,3);
-        Assert.assertEquals(expectedNoThrees,actualNoThrees);
+//        int[] handWithNoThrees = {2,2,3,3,4};
+//        int expectedNoThrees = 0;
+//        int actualNoThrees = game.threeOrFourPair(handWithNoThrees,3);
+//        Assert.assertEquals(expectedNoThrees,actualNoThrees);
+//
+//        int[] handWithThrees = {2,2,2,3,4};
+//        int expectedThrees = 6;
+//        int actualThrees = game.threeOrFourPair(handWithThrees,3);
+//        Assert.assertEquals(expectedThrees,actualThrees);
+//
+//        int[] handWithFourTwos = {2,2,2,2,4};
+//        int expectedFourTwos = 6;
+//        int actualFourTwos = game.threeOrFourPair(handWithFourTwos,3);
+//        Assert.assertEquals(expectedFourTwos,actualFourTwos);
 
-        int[] handWithThrees = {2,2,2,3,4};
-        int expectedThrees = 6;
-        int actualThrees = game.threeOrFourPair(handWithThrees,3);
-        Assert.assertEquals(expectedThrees,actualThrees);
+        int[] handHouse = {1,1,2,2,2};
+        int expected = 6;
+        int actual = game.threeOrFourPair(handHouse,3);
+        Assert.assertEquals(expected,actual);
 
-        int[] handWithFourTwos = {2,2,2,2,4};
-        int expectedFourTwos = 6;
-        int actualFourTwos = game.threeOrFourPair(handWithFourTwos,3);
-        Assert.assertEquals(expectedFourTwos,actualFourTwos);
     }
     @Test
     public void fourOfAKindTest() {
@@ -129,23 +135,48 @@ public class YahtzeeTests {
 
     @Test
     public void smallStraightTest() {
-        int[] hand = {1,2,3,4,5};
-        int expected = 15;
-        int actual = game.smallStraight(hand);
-        Assert.assertEquals(expected,actual);
+        int[] handWithStraight = {1,2,3,4,5};
+        int expectedWithStraight = 15;
+        int actualStraight = game.smallStraight(handWithStraight);
+        Assert.assertEquals(expectedWithStraight,actualStraight);
+
+        int[] handNoStraight = {1,2,1,4,5};
+        int expectedNoStraight = 0;
+        int actualNoStraight = game.smallStraight(handNoStraight);
+        Assert.assertEquals(expectedNoStraight,actualNoStraight);
     }
     @Test
     public void largeStraightTest() {
-        int[] hand = {2,3,4,5,6};
-        int expected = 20;
-        int actual = game.largeStraight(hand);
-        Assert.assertEquals(expected,actual);
+        int[] handWithStraight = {2,3,4,5,6};
+        int expectedStraight = 20;
+        int actualStraight = game.largeStraight(handWithStraight);
+        Assert.assertEquals(expectedStraight,actualStraight);
+
+        int[] handNoStraight = {1,2,3,4,5};
+        int expectedNoStraight = 0;
+        int actualNoStraight = game.largeStraight(handNoStraight);
+        Assert.assertEquals(expectedNoStraight,actualNoStraight);
     }
     @Test
     public void fullHouseTest() {
-        int[] hand = {2,2,1,3,4};
-        int expected =0;
-        int actual = game.fullHouse(hand);
-        Assert.assertEquals(expected,actual);
+//        int[] handNoHouse = {2,2,1,3,4};
+//        int expectedNoHouse =0;
+//        int actualNoHouse = game.fullHouse(handNoHouse);
+//        Assert.assertEquals(expectedNoHouse,actualNoHouse);
+//
+//        int[] handHouse = {1,1,2,2,2};
+//        int expectedHouse = 8;
+//        int actualHouse = game.fullHouse(handHouse);
+//        Assert.assertEquals(expectedHouse,actualHouse);
+//
+//        int[] handNoHouse2 = {3,3,3,3,3};
+//        int expectedNoHouse2 =0;
+//        int actualNoHouse2 = game.fullHouse(handNoHouse2);
+//        Assert.assertEquals(expectedNoHouse2,actualNoHouse2);
+
+        int[] handNoHouse3 = {1,3,3,3,3};
+        int expectedNoHouse3 =0;
+        int actualNoHouse3 = game.fullHouse(handNoHouse3);
+        Assert.assertEquals(expectedNoHouse3,actualNoHouse3);
     }
 }

@@ -154,14 +154,21 @@ public class GameMethods {
     }
 
     public int fullHouse(int[] arr) {
+        ArrayList<Integer> remove = findDuplicates(arr);
+        boolean match = Arrays.stream(arr).allMatch(s -> s == (arr[0]));
+        if(match) {
+            return 0;
+        }
+
         ArrayList<Integer>pairarr = new ArrayList<Integer>();
         int sum = 0;
         if(threeOrFourPair(arr,3) == 0) {
             return 0;
         }
+        sum += threeOrFourPair(arr,3);
         int divided = threeOrFourPair(arr,3) / 3;
         for (int item: arr) {
-            if (item != divided) {
+            if (item == divided) {
                 pairarr.add(item);
             }
         }
@@ -169,7 +176,7 @@ public class GameMethods {
         if(pair(numbers) == 0) {
             return 0;
         }
-        sum += threeOrFourPair(arr,3);
+
         sum += pair(numbers);
         return sum;
     }
