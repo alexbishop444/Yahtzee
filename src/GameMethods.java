@@ -48,10 +48,13 @@ public class GameMethods {
     }
 
     public int pair(int[] arr) {
-        // For loop gets duplicate numbers by only adding if there is a duplicate, add its to the numbersDuplicated array, finds the highest number in that array since they can only be dupes then adds
-//        that number twice
+        // For loop gets duplicate numbers by only adding if there is a duplicate, add its to the numbersDuplicated array,
+        // finds the highest number in that array since they can only be dupes then adds that number twice
         int sum = 0;
         ArrayList<Integer> duplicates = findDuplicates(arr);
+        if (duplicates.size() == 1) {
+            return 0;
+        }
         int highestNumber = Collections.max(duplicates);
         sum += highestNumber * 2;
         return sum;
@@ -139,6 +142,37 @@ public class GameMethods {
             return 20;
         }
         return 0;
+    }
+
+    public static int[] convertIntegers(ArrayList<Integer> integers)
+    {
+        int[] ret = new int[integers.size()];
+        for (int i=0; i < ret.length; i++)
+        {
+            ret[i] = integers.get(i).intValue();
+        }
+        return ret;
+    }
+
+    public int fullHouse(int[] arr) {
+        ArrayList<Integer>pairarr = new ArrayList<Integer>();
+        int sum = 0;
+        if(threeOrFourPair(arr,3) == 0) {
+            return 0;
+        }
+        int divided = threeOrFourPair(arr,3) / 3;
+        for (int item: arr) {
+            if (item != divided) {
+                pairarr.add(item);
+            }
+        }
+        int[] numbers = convertIntegers(pairarr);
+        if(pair(numbers) == 0) {
+            return 0;
+        }
+        sum += threeOrFourPair(arr,3);
+        sum += pair(numbers);
+        return sum;
     }
 
 }
