@@ -52,7 +52,7 @@ public class GameMethods {
         // finds the highest number in that array since they can only be dupes then adds that number twice
         int sum = 0;
         ArrayList<Integer> duplicates = findDuplicates(arr);
-        if (duplicates.size() == 1) {
+        if (duplicates.size() == 0) {
             return 0;
         }
         int highestNumber = Collections.max(duplicates);
@@ -61,7 +61,6 @@ public class GameMethods {
     }
     public int twoPair(int[] arr) {
         ArrayList<Integer> duplicates = findDuplicates(arr);
-        System.out.println(duplicates);
         int sum = 0;
         int pair1 = Collections.max(duplicates);
         int pair2 = Collections.min(duplicates);
