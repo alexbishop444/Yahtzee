@@ -31,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameMethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+            <state relative-caret-position="236">
+              <caret line="62" column="60" selection-start-line="62" selection-start-column="60" selection-end-line="62" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#77#108#0" expanded="true" />
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+            <state relative-caret-position="323">
+              <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,8 +72,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Tests/YahtzeeTests.java" />
         <option value="$PROJECT_DIR$/src/GameMethods.java" />
+        <option value="$PROJECT_DIR$/Tests/YahtzeeTests.java" />
       </list>
     </option>
   </component>
@@ -132,31 +132,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.YahtzeeTests">
-    <configuration name="YahtzeeTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.YahtzeeTests.fourOfAKindTest">
+    <configuration name="YahtzeeTests.addUpSameNumbersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Yahtzee" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="YahtzeeTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="YahtzeeTests.fullHouseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Yahtzee" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="YahtzeeTests" />
-      <option name="METHOD_NAME" value="fullHouseTest" />
+      <option name="METHOD_NAME" value="addUpSameNumbersTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="YahtzeeTests.largeStraightTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="YahtzeeTests.fourOfAKindTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Yahtzee" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="YahtzeeTests" />
-      <option name="METHOD_NAME" value="largeStraightTest" />
+      <option name="METHOD_NAME" value="fourOfAKindTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,20 +173,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="YahtzeeTests.twoPairTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Yahtzee" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="YahtzeeTests" />
+      <option name="METHOD_NAME" value="twoPairTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="JUnit.YahtzeeTests.largeStraightTest" />
-      <item itemvalue="JUnit.YahtzeeTests.fullHouseTest" />
-      <item itemvalue="JUnit.YahtzeeTests.threeOfAKindTest" />
       <item itemvalue="JUnit.YahtzeeTests.pairTest" />
-      <item itemvalue="JUnit.YahtzeeTests" />
+      <item itemvalue="JUnit.YahtzeeTests.addUpSameNumbersTest" />
+      <item itemvalue="JUnit.YahtzeeTests.twoPairTest" />
+      <item itemvalue="JUnit.YahtzeeTests.threeOfAKindTest" />
+      <item itemvalue="JUnit.YahtzeeTests.fourOfAKindTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.YahtzeeTests" />
-        <item itemvalue="JUnit.YahtzeeTests.pairTest" />
-        <item itemvalue="JUnit.YahtzeeTests.fullHouseTest" />
+        <item itemvalue="JUnit.YahtzeeTests.fourOfAKindTest" />
         <item itemvalue="JUnit.YahtzeeTests.threeOfAKindTest" />
-        <item itemvalue="JUnit.YahtzeeTests.largeStraightTest" />
+        <item itemvalue="JUnit.YahtzeeTests.twoPairTest" />
+        <item itemvalue="JUnit.YahtzeeTests.pairTest" />
+        <item itemvalue="JUnit.YahtzeeTests.addUpSameNumbersTest" />
       </list>
     </recent_temporary>
   </component>
@@ -209,44 +210,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567577396181</updated>
-      <workItem from="1567577399336" duration="22071000" />
+      <workItem from="1567577399336" duration="23103000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="YahtzeeTests_threeOfAKindTest - 2019.09.06 at 14h 20m 15s.xml">
+    <history-entry file="YahtzeeTests_pairTest - 2019.09.06 at 14h 37m 22s.xml">
+      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_pairTest - 2019.09.06 at 14h 37m 48s.xml">
+      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_pairTest - 2019.09.06 at 14h 38m 11s.xml">
+      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_pairTest - 2019.09.06 at 14h 39m 16s.xml">
+      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_twoPairTest - 2019.09.06 at 14h 39m 55s.xml">
+      <configuration name="YahtzeeTests.twoPairTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_twoPairTest - 2019.09.06 at 14h 40m 08s.xml">
+      <configuration name="YahtzeeTests.twoPairTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_twoPairTest - 2019.09.06 at 14h 41m 29s.xml">
+      <configuration name="YahtzeeTests.twoPairTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_threeOfAKindTest - 2019.09.06 at 14h 42m 37s.xml">
       <configuration name="YahtzeeTests.threeOfAKindTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 14h 20m 52s.xml">
-      <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
+    <history-entry file="YahtzeeTests_threeOfAKindTest - 2019.09.06 at 14h 42m 55s.xml">
+      <configuration name="YahtzeeTests.threeOfAKindTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 14h 21m 02s.xml">
-      <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 14h 21m 11s.xml">
-      <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 14h 21m 32s.xml">
-      <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 14h 22m 04s.xml">
-      <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 14h 22m 24s.xml">
-      <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 14h 23m 53s.xml">
-      <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 14h 24m 07s.xml">
-      <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_pairTest - 2019.09.06 at 14h 24m 46s.xml">
-      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
+    <history-entry file="YahtzeeTests_threeOfAKindTest - 2019.09.06 at 14h 43m 56s.xml">
+      <configuration name="YahtzeeTests.threeOfAKindTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22071000" />
+    <option name="totallyTimeSpent" value="23103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1680" height="966" extended-state="6" />
@@ -329,24 +330,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameMethods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+        <state relative-caret-position="236">
+          <caret line="62" column="60" selection-start-line="62" selection-start-column="60" selection-end-line="62" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#77#108#0" expanded="true" />
             <element signature="e#4489#4498#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
