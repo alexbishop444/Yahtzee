@@ -112,15 +112,15 @@ public class GameMethods {
         }
         if(counterOne >= arg) {
             sum = timesCounters(1,arg);
-        } else if (counterTwo >= 3) {
+        } else if (counterTwo >= arg) {
             sum = timesCounters(2,arg);
-        } else if (counterThree >= 3) {
+        } else if (counterThree >= arg) {
             sum = timesCounters(3,arg);
-        } else if (counterFour >= 3) {
+        } else if (counterFour >= arg) {
             sum = timesCounters(4,arg);
-        } else if (counterFive >= 3) {
+        } else if (counterFive >= arg) {
             sum = timesCounters(5,arg);
-        } else if (counterSix >= 3) {
+        } else if (counterSix >= arg) {
             sum = timesCounters(6,arg);
         } else {
             return 0;
