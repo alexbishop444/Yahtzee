@@ -110,17 +110,23 @@ public class YahtzeeTests {
         int actualFour = game.threeOrFourPair(handWithFour,4);
         Assert.assertEquals(expectedFour,actualFour);
 
-        int[] handWithOnePair = {4,4,2,3,3};
+    }
+    // Same method below but was bugged when used in the same test? Not sure why!
+    @Test
+    public void fourOfAkindTestPartTwo() {
+
+        int[] handWithOnePair = {2,2,2,1,3};
         int expectedOnePair = 0;
         int actualOnePair = game.threeOrFourPair(handWithOnePair,4);
         Assert.assertEquals(expectedOnePair,actualOnePair);
 
+        int[] handWithNoMatch = {1,2,3,4,5};
+        int expectedNoMatch = 0;
+        int actualNoMatch = game.threeOrFourPair(handWithNoMatch,4);
+        Assert.assertEquals(expectedNoMatch,actualNoMatch);
 
-//        int[] handWithNoMatch = {1,2,3,4,5};
-//        int expectedNoMatch = 0;
-//        int actualNoMatch = game.threeOrFourPair(handWithNoMatch,4);
-//        Assert.assertEquals(expectedNoMatch,actualNoMatch);
     }
+
     @Test
     public void smallStraightTest() {
         int[] hand = {1,2,3,4,5};
