@@ -93,7 +93,6 @@ public class GameMethods {
         ArrayList<Integer> duplicates = findDuplicates(arr);
         int sum = 0;
         for (Integer item:duplicates) {
-            System.out.println(item);
             switch (item) {
                 case 1:
                     counterOne += 1;
@@ -125,6 +124,21 @@ public class GameMethods {
             return 0;
         }
         return sum;
+    }
+
+    public int smallStraight(int[] arr) {
+        int[] compare = {1,2,3,4,5};
+        if(Arrays.equals(compare, arr)) {
+            return 15;
+        }
+        return 0;
+    }
+    public int largeStraight(int[] arr) {
+        int[] compare = {2,3,4,5,6};
+        if(Arrays.equals(compare, arr)) {
+            return 20;
+        }
+        return 0;
     }
 
 }
