@@ -51,14 +51,14 @@ public class YahtzeeTests {
     public void threeOfAKindTest() {
         int[] hand = {1,1,1,3,1};
         int expected = 3;
-        int actual = game.threePair(hand);
+        int actual = game.threeOrFourPair(hand,3);
         Assert.assertEquals(expected,actual);
     }
-//    @Test
-//    public void fourOfAKindTest() {
-//        int[] hand = {2,2,2,2,5};
-//        int expected = 8;
-//        int actual = game.fourPair(hand);
-//        Assert.assertEquals(expected,actual);
-//    }
+    @Test
+    public void fourOfAKindTest() {
+        int[] hand = {2,2,2,2,5};
+        int expected = 8;
+        int actual = game.threeOrFourPair(hand,4);
+        Assert.assertEquals(expected,actual);
+    }
 }
