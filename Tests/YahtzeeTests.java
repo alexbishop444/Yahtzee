@@ -159,24 +159,24 @@ public class YahtzeeTests {
     }
     @Test
     public void fullHouseTest() {
-//        int[] handNoHouse = {2,2,1,3,4};
-//        int expectedNoHouse =0;
-//        int actualNoHouse = game.fullHouse(handNoHouse);
-//        Assert.assertEquals(expectedNoHouse,actualNoHouse);
-//
-//        int[] handHouse = {1,1,2,2,2};
-//        int expectedHouse = 8;
-//        int actualHouse = game.fullHouse(handHouse);
-//        Assert.assertEquals(expectedHouse,actualHouse);
-//
-//        int[] handNoHouse2 = {3,3,3,3,3};
-//        int expectedNoHouse2 =0;
-//        int actualNoHouse2 = game.fullHouse(handNoHouse2);
-//        Assert.assertEquals(expectedNoHouse2,actualNoHouse2);
+        int[] handNoHouse = {2,2,1,3,4};
+        int expectedNoHouse =0;
+        int actualNoHouse = game.fullHouse(handNoHouse);
+        Assert.assertEquals(expectedNoHouse,actualNoHouse);
 
-        int[] handNoHouse3 = {1,3,3,3,3};
-        int expectedNoHouse3 =0;
-        int actualNoHouse3 = game.fullHouse(handNoHouse3);
-        Assert.assertEquals(expectedNoHouse3,actualNoHouse3);
+        int[] handHouse = {1,1,2,2,2};
+        int expectedHouse = 8;
+        int actualHouse = game.fullHouse(handHouse);
+        Assert.assertEquals(expectedHouse,actualHouse);
+
+        int[] handNoHouse2 = {3,3,3,3,3};
+        int expectedNoHouse2 =0;
+        int actualNoHouse2 = game.fullHouse(handNoHouse2);
+        Assert.assertEquals(expectedNoHouse2,actualNoHouse2);
+//
+//        int[] handNoHouse3 = {1,3,3,3,3};
+//        int expectedNoHouse3 =0;
+//        int actualNoHouse3 = game.fullHouse(handNoHouse3);
+//        Assert.assertEquals(expectedNoHouse3,actualNoHouse3);
     }
 }

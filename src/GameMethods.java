@@ -166,9 +166,10 @@ public class GameMethods {
             return 0;
         }
         sum += threeOrFourPair(arr,3);
-        int divided = threeOrFourPair(arr,3) / 3;
+//        int divided = threeOrFourPair(arr,3) / 3; //problem is here
+        int divided = sum / 3;
         for (int item: arr) {
-            if (item == divided) {
+            if (item != divided) {
                 pairarr.add(item);
             }
         }

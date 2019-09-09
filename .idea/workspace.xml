@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbe0f7cf-aa7b-46da-8995-105366a07c5a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/YahtzeeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/YahtzeeTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMethods.java" afterDir="false" />
     </list>
@@ -13,8 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -22,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+              <caret column="19" selection-start-column="19" selection-end-column="19" />
               <folding>
                 <element signature="e#64#65#0" expanded="true" />
                 <element signature="e#114#115#0" expanded="true" />
@@ -31,27 +31,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameMethods.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="159" column="21" selection-start-line="159" selection-start-column="21" selection-end-line="159" selection-end-column="21" />
+            <state relative-caret-position="281">
+              <caret line="166" selection-start-line="166" selection-end-line="169" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#77#108#0" expanded="true" />
-                <element signature="e#4672#4681#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameMethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="179" column="59" selection-start-line="179" selection-start-column="59" selection-end-line="179" selection-end-column="59" />
+            <state relative-caret-position="227">
+              <caret line="169" column="30" lean-forward="true" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4713#4722#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,12 +71,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/GameMethods.java" />
         <option value="$PROJECT_DIR$/Tests/YahtzeeTests.java" />
+        <option value="$PROJECT_DIR$/src/GameMethods.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="y" value="54" />
     <option name="width" value="1680" />
     <option name="height" value="966" />
@@ -89,6 +88,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,7 +105,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -133,16 +132,6 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.YahtzeeTests.fullHouseTest">
-    <configuration name="YahtzeeTests.fourOfAkindTestPartTwo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Yahtzee" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="YahtzeeTests" />
-      <option name="METHOD_NAME" value="fourOfAkindTestPartTwo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="YahtzeeTests.fullHouseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Yahtzee" />
       <option name="PACKAGE_NAME" value="" />
@@ -158,6 +147,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="YahtzeeTests" />
       <option name="METHOD_NAME" value="largeStraightTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YahtzeeTests.pairTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Yahtzee" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="YahtzeeTests" />
+      <option name="METHOD_NAME" value="pairTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -184,19 +183,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.YahtzeeTests.fourOfAkindTestPartTwo" />
       <item itemvalue="JUnit.YahtzeeTests.smallStraightTest" />
       <item itemvalue="JUnit.YahtzeeTests.largeStraightTest" />
       <item itemvalue="JUnit.YahtzeeTests.fullHouseTest" />
       <item itemvalue="JUnit.YahtzeeTests.threeOfAKindTest" />
+      <item itemvalue="JUnit.YahtzeeTests.pairTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.YahtzeeTests.fullHouseTest" />
+        <item itemvalue="JUnit.YahtzeeTests.pairTest" />
         <item itemvalue="JUnit.YahtzeeTests.threeOfAKindTest" />
         <item itemvalue="JUnit.YahtzeeTests.largeStraightTest" />
         <item itemvalue="JUnit.YahtzeeTests.smallStraightTest" />
-        <item itemvalue="JUnit.YahtzeeTests.fourOfAkindTestPartTwo" />
       </list>
     </recent_temporary>
   </component>
@@ -210,78 +209,79 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567577396181</updated>
-      <workItem from="1567577399336" duration="26946000" />
+      <workItem from="1567577399336" duration="28282000" />
+      <workItem from="1567989491942" duration="322000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 16h 09m 08s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 36m 14s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 16h 09m 21s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 36m 15s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 16h 09m 32s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 36m 16s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 16h 09m 40s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 36m 20s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 16h 10m 07s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 36m 35s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 16h 11m 37s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 37m 27s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 16h 11m 42s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 41m 01s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 16h 11m 52s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 41m 08s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 16h 12m 08s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 41m 22s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.06 at 16h 12m 16s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 43m 31s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26946000" />
+    <option name="totallyTimeSpent" value="28604000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1680" height="966" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" weight="0.32951945" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32951945" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32951945" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993135" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32857144" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3989796" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32951945" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32951945" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
     <layout-to-restore>
       <window_info id="Image Layers" order="0" />
@@ -319,10 +319,31 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="203" selection-start-line="203" selection-end-line="203" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
           <folding>
             <element signature="e#64#65#0" expanded="true" />
             <element signature="e#114#115#0" expanded="true" />
@@ -330,22 +351,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/function/IntPredicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameMethods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="159" column="21" selection-start-line="159" selection-start-column="21" selection-end-line="159" selection-end-column="21" />
+        <state relative-caret-position="227">
+          <caret line="169" column="30" lean-forward="true" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#77#108#0" expanded="true" />
-            <element signature="e#4672#4681#0" expanded="true" />
+            <element signature="e#4713#4722#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="179" column="59" selection-start-line="179" selection-start-column="59" selection-end-line="179" selection-end-column="59" />
+        <state relative-caret-position="281">
+          <caret line="166" selection-start-line="166" selection-end-line="169" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
