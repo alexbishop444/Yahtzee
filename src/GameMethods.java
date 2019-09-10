@@ -3,6 +3,11 @@ import java.util.stream.*;
 import java.util.Collections;
 @SuppressWarnings("Duplicates")
 
+//public interface IGameMethods
+//{
+//    int chance(Dice[] dices);
+//}
+
 public class GameMethods {
     int counterOne = 0;
     int counterTwo = 0;
@@ -91,41 +96,45 @@ public class GameMethods {
         return sum;
     }
 
-    public int threeOrFourPair(int[] arr, int arg) {
-        ArrayList<Integer> duplicates = findDuplicates(arr);
-        int sum = 0;
-        for (Integer item:duplicates) {
-            switch (item) {
-                case 1:
-                    counterOne += 1;
-                case 2:
-                    counterTwo += 1;
-                case 3:
-                    counterThree += 1;
-                case 4:
-                    counterFour += 1;
-                case 5:
-                    counterFive += 1;
-                case 6:
-                    counterSix += 1;
+    public int threes(Dice[] dices) {
+        return SharedThreesAndFoursCode(dices, 3);
+    }
+
+    public int FoursCode(Dice[] dices)
+    {
+        return SharedThreesAndFoursCode(dices, 4);
+    }
+
+    private int[] getCounts(Dice[] dices) {
+        int[] counts = new int[] {0,0,0,0,0,0};
+        for (Dice d:dices) {
+            counts[d.value - 1]++;
+        }
+        return counts;
+    }
+
+    private int SharedThreesAndFoursCode(Dice[] dices, int max)
+    {
+        // 3, 3, 3, 1, 5
+        int[] counts = getCounts(dices);
+
+        // {1, 0, 3, 0, 1}
+        int highestCountNumber = 0;
+        int highestCount = 0;
+        for (int i = 1; i <= counts.length; i++)
+        {
+            if (counts[i - 1] >= highestCount)
+            {
+                highestCountNumber = i;
             }
         }
-        if(counterOne >= arg) {
-            sum = timesCounters(1,arg);
-        } else if (counterTwo >= arg) {
-            sum = timesCounters(2,arg);
-        } else if (counterThree >= arg) {
-            sum = timesCounters(3,arg);
-        } else if (counterFour >= arg) {
-            sum = timesCounters(4,arg);
-        } else if (counterFive >= arg) {
-            sum = timesCounters(5,arg);
-        } else if (counterSix >= arg) {
-            sum = timesCounters(6,arg);
-        } else {
+
+        if (highestCount < max)
+        {
             return 0;
         }
-        return sum;
+
+        return highestCountNumber * max;
     }
 
     public int smallStraight(int[] arr) {
@@ -143,7 +152,7 @@ public class GameMethods {
         return 0;
     }
 
-    public static int[] convertIntegers(ArrayList<Integer> integers)
+    public int[] convertIntegers(ArrayList<Integer> integers)
     {
         int[] ret = new int[integers.size()];
         for (int i=0; i < ret.length; i++)
@@ -153,32 +162,30 @@ public class GameMethods {
         return ret;
     }
 
-    public int fullHouse(int[] arr) {
-        ArrayList<Integer> remove = findDuplicates(arr);
-        boolean match = Arrays.stream(arr).allMatch(s -> s == (arr[0]));
+    public int fullHouse(Dice[] dices) {
+        boolean match = Arrays.stream(dices).allMatch(s -> s == (dices[0]));
         if(match) {
             return 0;
         }
-
-        ArrayList<Integer>pairarr = new ArrayList<Integer>();
         int sum = 0;
-        if(threeOrFourPair(arr,3) == 0) {
+        int[] counts = getCounts(dices);
+        //change counts to a list, then check if it contains the values 3 and 2.
+        System.out.println(Arrays.toString(counts));
+        boolean match1 = Arrays.stream(counts).anyMatch(i -> i == 3);
+        boolean match2 = Arrays.stream(counts).anyMatch(i -> i == 2);
+        if (!match1 || !match2) {
             return 0;
         }
-        sum += threeOrFourPair(arr,3);
-//        int divided = threeOrFourPair(arr,3) / 3; //problem is here
-        int divided = sum / 3;
-        for (int item: arr) {
-            if (item != divided) {
-                pairarr.add(item);
+
+        for (int i = 0; i < counts.length; i++) {
+            int value = counts[i];
+
+            if (value > 0)
+            {
+                sum += value * (i + 1);
             }
         }
-        int[] numbers = convertIntegers(pairarr);
-        if(pair(numbers) == 0) {
-            return 0;
-        }
 
-        sum += pair(numbers);
         return sum;
     }
 
