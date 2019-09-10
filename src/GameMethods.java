@@ -75,11 +75,17 @@ public class GameMethods {
         return sum;
     }
     public int twoPair(Dice[] arr) {
-        ArrayList<Integer> numbers = numberArray(arr);
         ArrayList<Dice> duplicates = findDuplicates(arr);
+        ArrayList<Integer> duplicatesInNums = new ArrayList<>();
+        if(duplicates.size() < 2) {
+            return 0;
+        }
+        for (Dice item:duplicates) {
+            duplicatesInNums.add(item.value);
+        }
         int sum = 0;
-        int pair1 = Collections.max(numbers);
-        int pair2 = Collections.min(numbers);
+        int pair1 = Collections.max(duplicatesInNums);
+        int pair2 = Collections.min(duplicatesInNums);
         if ((pair1 > 0 && pair2 > 0) && (pair1 != pair2)) {
             sum += pair1 * 2;
             sum += pair2 * 2;
@@ -168,7 +174,7 @@ public class GameMethods {
         int sum = 0;
         int[] counts = getCounts(dices);
         //change counts to a list, then check if it contains the values 3 and 2.
-        System.out.println(Arrays.toString(counts));
+//        System.out.println(Arrays.toString(counts));
         boolean match1 = Arrays.stream(counts).anyMatch(i -> i == 3);
         boolean match2 = Arrays.stream(counts).anyMatch(i -> i == 2);
         if (!match1 || !match2) {
