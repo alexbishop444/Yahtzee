@@ -100,11 +100,11 @@ public class YahtzeeTests {
         Dice[] hand = {
                 new Dice(true,5),
                 new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
+                new Dice(true,4),
+                new Dice(true,4),
+                new Dice(true,2),
         };
-        int expectedOnePair = 0;
+        int expectedOnePair = 18;
         int actualOnePair = game.twoPair(hand);
         Assert.assertEquals(expectedOnePair,actualOnePair);
 
@@ -127,13 +127,13 @@ public class YahtzeeTests {
     @Test
     public void fourOfAKindTest() {
         Dice[] hand = {
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
+                new Dice(true,3),
+                new Dice(true,3),
+                new Dice(true,3),
+                new Dice(true,3),
                 new Dice(true,5),
         };
-        int expectedFour = 20;
+        int expectedFour = 12;
         int actualFour = game.foursCode(hand);
         Assert.assertEquals(expectedFour,actualFour);
 
@@ -149,7 +149,7 @@ public class YahtzeeTests {
                 new Dice(true,5),
                 new Dice(true,5),
         };
-        int expectedOnePair = 0;
+        int expectedOnePair = 20;
         int actualOnePair = game.foursCode(hand);
         Assert.assertEquals(expectedOnePair,actualOnePair);
 
@@ -158,10 +158,10 @@ public class YahtzeeTests {
     @Test
     public void smallStraightTest() {
         Dice[] hand = {
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
+                new Dice(true,1),
+                new Dice(true,2),
+                new Dice(true,3),
+                new Dice(true,4),
                 new Dice(true,5),
         };
         int expectedWithStraight = 15;
@@ -171,11 +171,11 @@ public class YahtzeeTests {
     @Test
     public void largeStraightTest() {
         Dice[] hand = {
+                new Dice(true,2),
+                new Dice(true,3),
+                new Dice(true,4),
                 new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
+                new Dice(true,6),
         };
         int expectedStraight = 20;
         int actualStraight = game.largeStraight(hand);
