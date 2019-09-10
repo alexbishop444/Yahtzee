@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbe0f7cf-aa7b-46da-8995-105366a07c5a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Dice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameLoop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/YahtzeeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/YahtzeeTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/GameMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/GameMethods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Yahtzee/YahtzeeTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Yahtzee/YahtzeeTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMethods.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -34,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="166" selection-start-line="166" selection-end-line="169" selection-end-column="55" />
+            <state relative-caret-position="514">
+              <caret line="179" column="30" selection-start-line="179" selection-start-column="30" selection-end-line="179" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,12 +50,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameMethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="169" column="30" lean-forward="true" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
+            <state relative-caret-position="152">
+              <caret line="198" column="52" selection-start-line="198" selection-start-column="52" selection-end-line="198" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4713#4722#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2145">
+              <caret line="194" column="25" selection-start-line="194" selection-start-column="25" selection-end-line="194" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameLoop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="21" selection-start-column="21" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -71,15 +101,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Tests/YahtzeeTests.java" />
+        <option value="$PROJECT_DIR$/src/Dice.java" />
         <option value="$PROJECT_DIR$/src/GameMethods.java" />
+        <option value="$PROJECT_DIR$/Tests/YahtzeeTests.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="y" value="54" />
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1680" />
-    <option name="height" value="966" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -88,7 +118,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,6 +134,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -210,50 +240,53 @@
       <option name="presentableId" value="Default" />
       <updated>1567577396181</updated>
       <workItem from="1567577399336" duration="28282000" />
-      <workItem from="1567989491942" duration="322000" />
+      <workItem from="1567989491942" duration="6927000" />
+      <workItem from="1568072301310" duration="1104000" />
+      <workItem from="1568074308201" duration="44000" />
+      <workItem from="1568074846025" duration="536000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 36m 14s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.10 at 10h 10m 08s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 36m 15s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.10 at 10h 12m 30s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 36m 16s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.10 at 10h 21m 10s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 36m 20s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.10 at 10h 21m 57s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 36m 35s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.10 at 10h 23m 06s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 37m 27s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.10 at 10h 24m 45s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 41m 01s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.10 at 10h 25m 11s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 41m 08s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.10 at 10h 27m 14s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 41m 22s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.10 at 10h 27m 44s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.09 at 10h 43m 31s.xml">
+    <history-entry file="YahtzeeTests_fullHouseTest - 2019.09.10 at 10h 28m 33s.xml">
       <configuration name="YahtzeeTests.fullHouseTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28604000" />
+    <option name="totallyTimeSpent" value="36893000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2997558" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -262,17 +295,17 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32857144" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3989796" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32857144" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3989796" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32959184" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32951945" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32857144" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32951945" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32857144" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -333,13 +366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="203" selection-start-line="203" selection-end-line="203" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -351,28 +377,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2145">
+          <caret line="194" column="25" selection-start-line="194" selection-start-column="25" selection-end-line="194" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/function/IntPredicate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
+        <state relative-caret-position="188">
           <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameMethods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="169" column="30" lean-forward="true" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
+        <state relative-caret-position="152">
+          <caret line="198" column="52" selection-start-line="198" selection-start-column="52" selection-end-line="198" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4713#4722#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="166" selection-start-line="166" selection-end-line="169" selection-end-column="55" />
+        <state relative-caret-position="514">
+          <caret line="179" column="30" selection-start-line="179" selection-start-column="30" selection-end-line="179" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
