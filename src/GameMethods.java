@@ -40,8 +40,8 @@ public class GameMethods {
         return sum;
     }
 
-    public ArrayList<Integer> findDuplicates(int[] arr) {
-        ArrayList<Integer> numbersDuplicated = new <Integer>ArrayList();
+    public ArrayList<Dice> findDuplicates(Dice[] arr) {
+        ArrayList<Dice> numbersDuplicated = new <Dice>ArrayList();
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] == (arr[j])) {
@@ -52,46 +52,38 @@ public class GameMethods {
         return numbersDuplicated;
     }
 
-    public int pair(int[] arr) {
+    public ArrayList<Integer> numberArray(Dice[] arr) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        for (Dice d:arr) {
+            numbers.add(d.value);
+        }
+        return numbers;
+    }
+
+    public int pair(Dice[] arr) {
         // For loop gets duplicate numbers by only adding if there is a duplicate, add its to the numbersDuplicated array,
         // finds the highest number in that array since they can only be dupes then adds that number twice
         int sum = 0;
-        ArrayList<Integer> duplicates = findDuplicates(arr);
+        ArrayList<Dice> duplicates = findDuplicates(arr);
+        ArrayList<Integer> numbers = numberArray(arr);
         if (duplicates.size() == 0) {
             return 0;
         }
-        int highestNumber = Collections.max(duplicates);
+        int highestNumber = Collections.max(numbers);
         sum += highestNumber * 2;
         return sum;
     }
-    public int twoPair(int[] arr) {
-        ArrayList<Integer> duplicates = findDuplicates(arr);
+    public int twoPair(Dice[] arr) {
+        ArrayList<Integer> numbers = numberArray(arr);
+        ArrayList<Dice> duplicates = findDuplicates(arr);
         int sum = 0;
-        int pair1 = Collections.max(duplicates);
-        int pair2 = Collections.min(duplicates);
+        int pair1 = Collections.max(numbers);
+        int pair2 = Collections.min(numbers);
         if ((pair1 > 0 && pair2 > 0) && (pair1 != pair2)) {
             sum += pair1 * 2;
             sum += pair2 * 2;
         } else {
             sum = 0;
-        }
-        return sum;
-    }
-
-    public int timesCounters(int arg, int arg2) {
-        int sum = 0;
-        if (arg == 1) {
-            sum = arg2;
-        } else if (arg == 2) {
-            sum += 2 * arg2;
-        } else if (arg == 3) {
-            sum += 3 * arg2;
-        } else if (arg == 4) {
-            sum += 4 * arg2;
-        } else if (arg == 5) {
-            sum += 5 * arg2;
-        } else if (arg == 6) {
-            sum += 6 * arg2;
         }
         return sum;
     }
@@ -126,6 +118,7 @@ public class GameMethods {
             if (counts[i - 1] >= highestCount)
             {
                 highestCountNumber = i;
+                highestCount = counts[i - 1];
             }
         }
 
@@ -152,15 +145,15 @@ public class GameMethods {
         return 0;
     }
 
-    public int[] convertIntegers(ArrayList<Integer> integers)
-    {
-        int[] ret = new int[integers.size()];
-        for (int i=0; i < ret.length; i++)
-        {
-            ret[i] = integers.get(i).intValue();
-        }
-        return ret;
-    }
+//    public int[] convertIntegers(ArrayList<Integer> integers)
+//    {
+//        int[] ret = new int[integers.size()];
+//        for (int i=0; i < ret.length; i++)
+//        {
+//            ret[i] = integers.get(i).intValue();
+//        }
+//        return ret;
+//    }
 
     public int fullHouse(Dice[] dices) {
         boolean match = Arrays.stream(dices).allMatch(s -> s == (dices[0]));
