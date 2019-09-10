@@ -9,19 +9,25 @@ import java.util.Collections;
 //}
 
 public class GameMethods {
-    int counterOne = 0;
-    int counterTwo = 0;
-    int counterThree = 0;
-    int counterFour = 0;
-    int counterFive = 0;
-    int counterSix = 0;
 
-    public int chance(int[] arr) {
-        int sum = IntStream.of(arr).sum();
+    public ArrayList<Integer> numberArray(Dice[] arr) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        for (Dice d:arr) {
+            numbers.add(d.value);
+        }
+        return numbers;
+    }
+
+    public int chance(Dice[] arr) {
+        ArrayList<Integer> numbers = numberArray(arr);
+        int[] arr2 = convertIntegers(numbers);
+        int sum = IntStream.of(arr2).sum();
         return sum;
     }
-    public int yahtzee(int[] arr) {
-        IntStream intStream1 = Arrays.stream(arr);
+    public int yahtzee(Dice[] arr) {
+        ArrayList<Integer> numbers = numberArray(arr);
+        int[] arr2 = convertIntegers(numbers);
+        IntStream intStream1 = Arrays.stream(arr2);
         boolean allEqual = intStream1.distinct().limit(2).count() <= 1;
         if (allEqual) {
             return 50;
@@ -30,34 +36,29 @@ public class GameMethods {
         }
     }
 
-    public int addUpSameNumbers(int[] arr, int arg) {
+    public int addUpSameNumbers(Dice[] arr, int arg) {
         int sum = 0;
-        for (int item : arr) {
-            if (item == arg) {
-                sum += item;
+        for (Dice item : arr) {
+            if (item.value == arg) {
+                sum += item.value;
             }
         }
         return sum;
     }
 
     public ArrayList<Dice> findDuplicates(Dice[] arr) {
+        ArrayList<Integer> numbers = numberArray(arr);
+        int[] arr2 = convertIntegers(numbers);
         ArrayList<Dice> numbersDuplicated = new <Dice>ArrayList();
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] == (arr[j])) {
+
+        for (int i = 0; i < arr2.length; i++) {
+            for (int j = i + 1; j < arr2.length; j++) {
+                if (arr2[i] == (arr2[j])) {
                     numbersDuplicated.add(arr[i]);
                 }
             }
         }
         return numbersDuplicated;
-    }
-
-    public ArrayList<Integer> numberArray(Dice[] arr) {
-        ArrayList<Integer> numbers = new ArrayList<>();
-        for (Dice d:arr) {
-            numbers.add(d.value);
-        }
-        return numbers;
     }
 
     public int pair(Dice[] arr) {
@@ -92,7 +93,7 @@ public class GameMethods {
         return SharedThreesAndFoursCode(dices, 3);
     }
 
-    public int FoursCode(Dice[] dices)
+    public int foursCode(Dice[] dices)
     {
         return SharedThreesAndFoursCode(dices, 4);
     }
@@ -130,30 +131,34 @@ public class GameMethods {
         return highestCountNumber * max;
     }
 
-    public int smallStraight(int[] arr) {
+    public int smallStraight(Dice[] arr) {
         int[] compare = {1,2,3,4,5};
-        if(Arrays.equals(compare, arr)) {
+        ArrayList<Integer> numbers = numberArray(arr);
+        int[] arr2 = convertIntegers(numbers);
+        if(Arrays.equals(compare, arr2)) {
             return 15;
         }
         return 0;
     }
-    public int largeStraight(int[] arr) {
+    public int largeStraight(Dice[] arr) {
+        ArrayList<Integer> numbers = numberArray(arr);
+        int[] arr2 = convertIntegers(numbers);
         int[] compare = {2,3,4,5,6};
-        if(Arrays.equals(compare, arr)) {
+        if(Arrays.equals(compare, arr2)) {
             return 20;
         }
         return 0;
     }
 
-//    public int[] convertIntegers(ArrayList<Integer> integers)
-//    {
-//        int[] ret = new int[integers.size()];
-//        for (int i=0; i < ret.length; i++)
-//        {
-//            ret[i] = integers.get(i).intValue();
-//        }
-//        return ret;
-//    }
+    public int[] convertIntegers(ArrayList<Integer> integers)
+    {
+        int[] ret = new int[integers.size()];
+        for (int i=0; i < ret.length; i++)
+        {
+            ret[i] = integers.get(i).intValue();
+        }
+        return ret;
+    }
 
     public int fullHouse(Dice[] dices) {
         boolean match = Arrays.stream(dices).allMatch(s -> s == (dices[0]));
