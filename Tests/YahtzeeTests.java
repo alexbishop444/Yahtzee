@@ -99,50 +99,42 @@ public class YahtzeeTests {
     }
     @Test
     public void threeOfAKindTest() {
-//        int[] handWithNoThrees = {2,2,3,3,4};
-//        int expectedNoThrees = 0;
-//        int actualNoThrees = game.threeOrFourPair(handWithNoThrees,3);
-//        Assert.assertEquals(expectedNoThrees,actualNoThrees);
-//
-//        int[] handWithThrees = {2,2,2,3,4};
-//        int expectedThrees = 6;
-//        int actualThrees = game.threeOrFourPair(handWithThrees,3);
-//        Assert.assertEquals(expectedThrees,actualThrees);
-//
-//        int[] handWithFourTwos = {2,2,2,2,4};
-//        int expectedFourTwos = 6;
-//        int actualFourTwos = game.threeOrFourPair(handWithFourTwos,3);
-//        Assert.assertEquals(expectedFourTwos,actualFourTwos);
 
-//        int[] handHouse = {1,1,2,2,2};
-//        int expected = 6;
-//        int actual = game.threeOrFourPair(handHouse,3);
-//        Assert.assertEquals(expected,actual);
-//
+        Dice[] hand = {
+                new Dice(true,2),
+                new Dice(true,2),
+                new Dice(true,2),
+                new Dice(true,1),
+                new Dice(true,1),
+        };
+        int expected =6;
+        int actual = game.threes(hand);
+        Assert.assertEquals(expected,actual);
+
     }
-//    @Test
-//    public void fourOfAKindTest() {
-//        int[] handWithFour = {4,4,4,4,5};
-//        int expectedFour = 16;
-//        int actualFour = game.threeOrFourPair(handWithFour,4);
-//        Assert.assertEquals(expectedFour,actualFour);
-//
-//    }
-//    // Same method below but was bugged when used in the same test? Not sure why!
-//    @Test
-//    public void fourOfAkindTestPartTwo() {
-//
-//        int[] handWithOnePair = {2,2,2,1,3};
-//        int expectedOnePair = 0;
-//        int actualOnePair = game.threeOrFourPair(handWithOnePair,4);
-//        Assert.assertEquals(expectedOnePair,actualOnePair);
-//
-//        int[] handWithNoMatch = {1,2,3,4,5};
-//        int expectedNoMatch = 0;
-//        int actualNoMatch = game.threeOrFourPair(handWithNoMatch,4);
-//        Assert.assertEquals(expectedNoMatch,actualNoMatch);
-//
-//    }
+    @Test
+    public void fourOfAKindTest() {
+        int[] handWithFour = {4,4,4,4,5};
+        int expectedFour = 16;
+        int actualFour = game.threeOrFourPair(handWithFour,4);
+        Assert.assertEquals(expectedFour,actualFour);
+
+    }
+    // Same method below but was bugged when used in the same test? Not sure why!
+    @Test
+    public void fourOfAkindTestPartTwo() {
+
+        int[] handWithOnePair = {2,2,2,1,3};
+        int expectedOnePair = 0;
+        int actualOnePair = game.threeOrFourPair(handWithOnePair,4);
+        Assert.assertEquals(expectedOnePair,actualOnePair);
+
+        int[] handWithNoMatch = {1,2,3,4,5};
+        int expectedNoMatch = 0;
+        int actualNoMatch = game.threeOrFourPair(handWithNoMatch,4);
+        Assert.assertEquals(expectedNoMatch,actualNoMatch);
+
+    }
 
     @Test
     public void smallStraightTest() {
@@ -180,20 +172,5 @@ public class YahtzeeTests {
         int expectedNoHouse =8;
         int actualNoHouse = game.fullHouse(handNoHouse);
         Assert.assertEquals(expectedNoHouse,actualNoHouse);
-
-//        int[] handHouse = {1,1,2,2,2};
-//        int expectedHouse = 8;
-//        int actualHouse = game.fullHouse(handHouse);
-//        Assert.assertEquals(expectedHouse,actualHouse);
-//
-//        int[] handNoHouse2 = {3,3,3,3,3};
-//        int expectedNoHouse2 =0;
-//        int actualNoHouse2 = game.fullHouse(handNoHouse2);
-//        Assert.assertEquals(expectedNoHouse2,actualNoHouse2);
-//
-//        int[] handNoHouse3 = {1,3,3,3,3};
-//        int expectedNoHouse3 =0;
-//        int actualNoHouse3 = game.fullHouse(handNoHouse3);
-//        Assert.assertEquals(expectedNoHouse3,actualNoHouse3);
     }
 }
