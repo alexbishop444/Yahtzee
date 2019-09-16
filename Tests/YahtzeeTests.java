@@ -1,10 +1,10 @@
 import org.junit.Assert;
 import org.junit.Test;
-import java.util.ArrayList;
-import java.util.OptionalInt;
+import static org.mockito.Mockito.*;
+import java.util.List;
 
 public class YahtzeeTests {
-    GameMethods game = new GameMethods();
+    ScoringCombinations game = new ScoringCombinations();
     @Test
     public void chanceTest() {
         Dice[] hand = {
@@ -17,6 +17,24 @@ public class YahtzeeTests {
         int expected = 19;
         int actual = game.chance(hand);
         Assert.assertEquals(expected,actual);
+
+
+        // mock creation
+        ScoringCombinations mockedScoringCombinations = mock(ScoringCombinations.class);
+
+// using mock object - it does not throw any "unexpected interaction" exception
+//        mockedScoringCombinations.chance();
+
+
+        // SomeFunction()
+        // gameloop
+        // call scoringcombinations.yahtzee returns some value
+        // if that value > 50 you win
+        // else you lose
+
+
+//        when(mockedScoringCombinations.chance(hand)).thenThrow(100);
+        System.out.println(mockedScoringCombinations.chance(hand));
     }
     @Test
     public void yahtzeeTest_unhappy() {
