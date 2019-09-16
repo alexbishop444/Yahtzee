@@ -62,14 +62,18 @@ public class GameLoop {
         return false;
     }
 
-    public Dice[] newRoll() {
-        Dice[] arr = new Dice[5];
-        arr[0] = roll();
-        arr[1] = roll();
-        arr[2] = roll();
-        arr[3] = roll();
-        arr[4] = roll();
+    public ArrayList<Dice> newRoll() {
+        ArrayList<Dice> arr = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            arr.add(roll());
+        }
         return arr;
+    }
+
+
+    public Dice[] convertArray(ArrayList<Dice> arr) {
+        Dice[] arr2 = arr.toArray(new Dice[arr.size()]);
+        return arr2;
     }
 
     public Dice roll() {
