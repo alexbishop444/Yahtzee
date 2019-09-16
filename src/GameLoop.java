@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Scanner;
 public class GameLoop {
     boolean playerOneChance = false;
     boolean playerTwoChance = false;
@@ -40,10 +40,25 @@ public class GameLoop {
 
     boolean gameover;
 
+    ArrayList<Dice> playerOne = new ArrayList<>();
+    ArrayList<Dice> playerTwo = new ArrayList<>();
+    Scanner scanner = new Scanner(System.in);
+    ScoringCombinations score = new ScoringCombinations();
+
     public void start() {
         System.out.println("Welcome to Yahtzee, Player one it is your turn");
         do {
-
+            ArrayList<Dice> playerOne = newRoll();
+            System.out.println("These are your cards. Press one for chance, or two to add up all the ones");
+            System.out.println(playerOne.toString());
+            String choice = scanner.nextLine();
+            if(choice.equals("1")) {
+                score.chance(convertArray(playerOne));
+                System.out.println(score.chance(convertArray(playerOne)));
+            } else {
+                score.addUpSameNumbers((convertArray(playerOne)),1);
+                System.out.println(score.addUpSameNumbers((convertArray(playerOne)),1));
+            }
 
         }while(!gameover);
     }
