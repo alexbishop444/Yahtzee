@@ -49,15 +49,21 @@ public class GameLoop {
         System.out.println("Welcome to Yahtzee, Player one it is your turn");
         do {
             ArrayList<Dice> playerOne = newRoll();
-            System.out.println("These are your cards. Press one for chance, or two to add up all the ones");
+            System.out.println("These are your cards.");
+            System.out.println("1. Chance used: " + playerOneChance);
+            System.out.println("2. Add up all Ones used:  " + playerOneOnes);
             System.out.println(playerOne.toString());
             String choice = scanner.nextLine();
-            if(choice.equals("1")) {
+            if(choice.equals("1") && !playerOneChance) {
                 score.chance(convertArray(playerOne));
                 System.out.println(score.chance(convertArray(playerOne)));
-            } else {
+                playerOneChance = true;
+            } else if (choice.equals("2") && !playerOneOnes) {
                 score.addUpSameNumbers((convertArray(playerOne)),1);
                 System.out.println(score.addUpSameNumbers((convertArray(playerOne)),1));
+                playerOneOnes = true;
+            } else {
+                System.out.println("You have already used this option");
             }
 
         }while(!gameover);
