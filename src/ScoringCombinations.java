@@ -3,12 +3,7 @@ import java.util.stream.*;
 import java.util.Collections;
 @SuppressWarnings("Duplicates")
 
-//public interface IGameMethods
-//{
-//    int chance(Dice[] dices);
-//}
-
-public class GameMethods {
+public class ScoringCombinations implements IScoringCombinations {
 
     public ArrayList<Integer> numberArray(Dice[] arr) {
         ArrayList<Integer> numbers = new ArrayList<>();
