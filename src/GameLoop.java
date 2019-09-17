@@ -1,67 +1,31 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 public class GameLoop {
-    boolean playerOneChance = false;
-    boolean playerTwoChance = false;
-    boolean playerOneYahtzee = false;
-    boolean playerTwoYahtzee = false;
-
-
-    boolean playerOneOnes = false;
-    boolean playerOneTwos = false;
-    boolean playerOneThrees = false;
-    boolean playerOneFours = false;
-    boolean playerOneFives = false;
-    boolean playerOneSixes = false;
-
-    boolean playerTwoOnes = false;
-    boolean playerTwoTwos = false;
-    boolean playerTwoThrees = false;
-    boolean playerTwoFours = false;
-    boolean playerTwoFives = false;
-    boolean playerTwoSixes = false;
-
-    boolean playerOnePair = false;
-    boolean playerOneTwoPairs = false;
-    boolean playerOneThreeOfAKind = false;
-    boolean playerOneFourOfAKind = false;
-    boolean playerOneSmallStraight = false;
-    boolean playerOneLargeStraight = false;
-    boolean playerOneFullHouse = false;
-
-    boolean playerTwoPair = false;
-    boolean playerTwoTwoPairs = false;
-    boolean playerTwoThreeOfAKind = false;
-    boolean playerTwoFourOfAKind = false;
-    boolean playerTwoSmallStraight = false;
-    boolean playerTwoLargeStraight = false;
-    boolean playerTwoFullHouse = false;
     //all above are game categories
 
     boolean gameover;
 
-    ArrayList<Dice> playerOne = new ArrayList<>();
-    ArrayList<Dice> playerTwo = new ArrayList<>();
+
     Scanner scanner = new Scanner(System.in);
     ScoringCombinations score = new ScoringCombinations();
-
+    Player playerOne = new Player(newRoll(),false,false,false,false,false,false,false,false,false,false,false,false,false,false,false);
+    Player playerTwo = new Player(newRoll(),false,false,false,false,false,false,false,false,false,false,false,false,false,false,false);
     public void start() {
         System.out.println("Welcome to Yahtzee, Player one it is your turn");
         do {
-            ArrayList<Dice> playerOne = newRoll();
+            playerOne.setDeck(newRoll());
             System.out.println("These are your cards.");
-            System.out.println("1. Chance used: " + playerOneChance);
-            System.out.println("2. Add up all Ones used:  " + playerOneOnes);
-            System.out.println(playerOne.toString());
+            System.out.println(playerOne.deck.toString());
+            options();
             String choice = scanner.nextLine();
-            if(choice.equals("1") && !playerOneChance) {
-                score.chance(convertArray(playerOne));
-                System.out.println(score.chance(convertArray(playerOne)));
-                playerOneChance = true;
-            } else if (choice.equals("2") && !playerOneOnes) {
-                score.addUpSameNumbers((convertArray(playerOne)),1);
-                System.out.println(score.addUpSameNumbers((convertArray(playerOne)),1));
-                playerOneOnes = true;
+            if(choice.equals("1") && !playerOne.chance) {
+                score.chance(convertArray(playerOne.deck));
+                System.out.println(score.chance(convertArray(playerOne.deck)));
+                playerOne.chance = true;
+            } else if (choice.equals("2") && !playerOne.ones) {
+                score.addUpSameNumbers((convertArray(playerOne.deck)),1);
+                System.out.println(score.addUpSameNumbers((convertArray(playerOne.deck)),1));
+                playerOne.ones = true;
             } else {
                 System.out.println("You have already used this option");
             }
@@ -69,19 +33,24 @@ public class GameLoop {
         }while(!gameover);
     }
 
-    private boolean isGameover() {
-        if((playerOneChance) && (playerTwoChance) && (playerOneYahtzee) && (playerTwoYahtzee) && (playerOneOnes) && (playerOneTwos) &&
-                (playerOneThrees) && (playerOneFours) && (playerOneFives) && (playerOneSixes) && (playerTwoOnes) && (playerTwoTwos) &&
-                (playerTwoThrees) && (playerTwoFours) && (playerTwoFives) && (playerTwoSixes) && (playerOnePair) && (playerOneTwoPairs) &&
-                (playerOneThreeOfAKind) && (playerOneFourOfAKind) && (playerOneSmallStraight) && (playerOneLargeStraight) && (playerOneFullHouse) &&
-                (playerTwoPair) && (playerTwoTwoPairs) && (playerTwoThreeOfAKind) && (playerTwoFourOfAKind) && (playerTwoSmallStraight) &&
-                (playerTwoLargeStraight) && (playerTwoFullHouse)
-        ){
-            gameover = true;
-            return true;
-        }
-        return false;
+    private void options() {
+        System.out.println("1. Chance used: " + playerOne.chance);
+        System.out.println("2. Add up all Ones used:  " + playerOne.ones);
     }
+
+//    private boolean isGameover() {
+//        if((playerOneChance) && (playerTwoChance) && (playerOneYahtzee) && (playerTwoYahtzee) && (playerOneOnes) && (playerOneTwos) &&
+//                (playerOneThrees) && (playerOneFours) && (playerOneFives) && (playerOneSixes) && (playerTwoOnes) && (playerTwoTwos) &&
+//                (playerTwoThrees) && (playerTwoFours) && (playerTwoFives) && (playerTwoSixes) && (playerOnePair) && (playerOneTwoPairs) &&
+//                (playerOneThreeOfAKind) && (playerOneFourOfAKind) && (playerOneSmallStraight) && (playerOneLargeStraight) && (playerOneFullHouse) &&
+//                (playerTwoPair) && (playerTwoTwoPairs) && (playerTwoThreeOfAKind) && (playerTwoFourOfAKind) && (playerTwoSmallStraight) &&
+//                (playerTwoLargeStraight) && (playerTwoFullHouse)
+//        ){
+//            gameover = true;
+//            return true;
+//        }
+//        return false;
+//    }
 
     public ArrayList<Dice> newRoll() {
         ArrayList<Dice> arr = new ArrayList<>();
