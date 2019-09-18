@@ -20,6 +20,8 @@ public class Player {
     boolean largeStraight = false;
     boolean fullHouse = false;
 
+    int score = 0;
+
     ArrayList<Dice> deck;
 
     public void setDeck(ArrayList<Dice> deck) {
@@ -30,7 +32,7 @@ public class Player {
         return deck;
     }
 
-    public Player(ArrayList<Dice> deck, boolean chance, boolean yahtzee, boolean ones, boolean twos, boolean threes, boolean fours, boolean fives, boolean sixes, boolean pair, boolean twoPairs, boolean threeOfAKind, boolean fourOfAKind, boolean smallStraight, boolean largeStraight, boolean fullHouse) {
+    public Player(ArrayList<Dice> deck, int score, boolean chance, boolean yahtzee, boolean ones, boolean twos, boolean threes, boolean fours, boolean fives, boolean sixes, boolean pair, boolean twoPairs, boolean threeOfAKind, boolean fourOfAKind, boolean smallStraight, boolean largeStraight, boolean fullHouse) {
         this.chance = chance;
         this.yahtzee = yahtzee;
         this.ones = ones;
@@ -47,10 +49,18 @@ public class Player {
         this.largeStraight = largeStraight;
         this.fullHouse = fullHouse;
         this.deck = deck;
+        this.score = score;
     }
 
     public boolean check() {
         if(chance && yahtzee && ones && twos && threes && fours && fives && sixes && pair && twoPairs && threeOfAKind && fourOfAKind && smallStraight && largeStraight && fullHouse ) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean checkTest() {
+        if (chance) {
             return true;
         }
         return false;
