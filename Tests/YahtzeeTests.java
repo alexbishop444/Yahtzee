@@ -85,6 +85,19 @@ public class YahtzeeTests {
         Assert.assertEquals(expected,actual);
     }
     @Test
+    public void addUpSameNumbersTestOnes() {
+        Dice[] hand = {
+                new Dice(true,1),
+                new Dice(true,1),
+                new Dice(true,6),
+                new Dice(true,3),
+                new Dice(true,4),
+        };
+        int expected = 2;
+        int actual = game.addUpSameNumbers(hand,1);
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
     public void addUpSameNumbersTest() {
         Dice[] hand = {
                 new Dice(true,5),
