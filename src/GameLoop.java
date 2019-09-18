@@ -19,18 +19,24 @@ public class GameLoop {
                 System.out.println(playerOne.deck.toString());
                 options(playerOne);
                 choices(playerOne);
-                System.out.println(turn);
+                System.out.println("Your total score is:" + playerOne.score);
+                if (playerTwo.check() && playerOne.check()) {
+                    winner(playerOne,playerTwo);
+                    System.out.println("Game over");
+                    gameover = true;
+                }
             }
             else if(turn) {
                 System.out.println("Player twos turn. These are your cards:");
                 System.out.println(playerTwo.deck.toString());
                 options(playerTwo);
                 choices(playerTwo);
-                if (playerTwo.checkTest()) {
+                System.out.println("Your total score is:" + playerTwo.score);
+                if (playerTwo.check() && playerOne.check()) {
+                    winner(playerOne,playerTwo);
                     gameover = true;
                 }
             }
-            System.out.println(turn);
         }while(!gameover);
     }
 
@@ -168,6 +174,22 @@ public class GameLoop {
             randomDouble = randomDouble * 6 + 1;
             int randomInt = (int) randomDouble;
             return new Dice(false,randomInt);
+    }
+
+    private void winner(Player player1,Player player2) {
+        if(player1.score > player2.score) {
+            System.out.println("Player one score:" + player1.score);
+            System.out.println("Player two score:" + player2.score);
+            System.out.println("Player One Wins");
+        } else if (player1.score == player2.score) {
+            System.out.println("Player one score:" + player1.score);
+            System.out.println("Player two score:" + player2.score);
+            System.out.println("IT'S A DRAW");
+        } else {
+            System.out.println("Player one score:" + player1.score);
+            System.out.println("Player two score:" + player2.score);
+            System.out.println("Player Two Wins");
+        }
     }
 
 
