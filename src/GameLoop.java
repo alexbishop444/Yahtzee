@@ -3,18 +3,19 @@ import java.util.Scanner;
 public class GameLoop {
     //all above are game categories
 
-    boolean gameover;
+    private boolean gameover;
     boolean turn;
 
 
     Scanner scanner = new Scanner(System.in);
     ScoringCombinations score = new ScoringCombinations();
-    Player playerOne = new Player(newRoll(),0,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false);
-    Player playerTwo = new Player(newRoll(),0,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false);
+    Player playerOne = new Player(newRoll());
+    Player playerTwo = new Player(newRoll());
     public void start() {
         System.out.println("Welcome to Yahtzee, Player one it is your turn");
         do {
             if(!turn) {
+                playerTwo.reset();
                 System.out.println("These are your cards.");
                 System.out.println(playerOne.deck.toString());
                 options(playerOne);
@@ -27,6 +28,7 @@ public class GameLoop {
                 }
             }
             else if(turn) {
+                playerOne.reset();
                 System.out.println("Player twos turn. These are your cards:");
                 System.out.println(playerTwo.deck.toString());
                 options(playerTwo);
@@ -173,23 +175,55 @@ public class GameLoop {
             double randomDouble = Math.random();
             randomDouble = randomDouble * 6 + 1;
             int randomInt = (int) randomDouble;
-            return new Dice(false,randomInt);
+            return new Dice(true,randomInt);
     }
 
-    private void winner(Player player1,Player player2) {
+    public GameResult winner(Player player1,Player player2) {
+        GameResult result = GameResult.none;
         if(player1.score > player2.score) {
             System.out.println("Player one score:" + player1.score);
             System.out.println("Player two score:" + player2.score);
             System.out.println("Player One Wins");
+            result = GameResult.playerOneWins;
         } else if (player1.score == player2.score) {
             System.out.println("Player one score:" + player1.score);
             System.out.println("Player two score:" + player2.score);
             System.out.println("IT'S A DRAW");
+            result = GameResult.draw;
         } else {
             System.out.println("Player one score:" + player1.score);
             System.out.println("Player two score:" + player2.score);
             System.out.println("Player Two Wins");
+            result = GameResult.playerTwoWins;
         }
+        System.out.println(result);
+        return result;
+    }
+
+    public ArrayList<Dice> rerollArrray(Dice[] arr) {
+        ArrayList<Dice> updatedArray = new ArrayList<>();
+        for (Dice item:arr) {
+            if(item.held) {
+                updatedArray.add(item);
+            }
+        }
+        for (int i = updatedArray.size(); i < 5; i++) {
+            updatedArray.add(roll());
+        }
+        return updatedArray;
+    }
+
+    public ArrayList<Dice> reroll(Player player) {
+        if(!player.roll1) {
+
+        } else if(!player.roll2) {
+
+        } else if(!player.roll3) {
+
+        } else {
+            System.out.println("You have used up all your turns");
+        }
+        return null;
     }
 
 

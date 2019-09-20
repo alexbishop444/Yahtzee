@@ -22,7 +22,7 @@ public class YahtzeeTests {
         // mock creation
         ScoringCombinations mockedScoringCombinations = mock(ScoringCombinations.class);
 
-// using mock object - it does not throw any "unexpected interaction" exception
+//        using mock object - it does not throw any "unexpected interaction" exception
 //        mockedScoringCombinations.chance();
 
 
@@ -36,6 +36,25 @@ public class YahtzeeTests {
 //        when(mockedScoringCombinations.chance(hand)).thenThrow(100);
         System.out.println(mockedScoringCombinations.chance(hand));
     }
+    @Test
+    public void mockTest() {
+        Dice[] hand = {};
+        // mock creation
+        ScoringCombinations mockedScoringCombinations = mock(ScoringCombinations.class);
+        when(mockedScoringCombinations.chance(hand)).thenReturn(100);
+        System.out.println(mockedScoringCombinations.chance(hand));
+    }
+//    @Test
+//    public void winningPlayerOneTest() {
+//        Dice[] hand = {};
+//        // mock creation
+//        GameLoop roll = new GameLoop();
+//        Player playerTwo = new Player(roll.newRoll(),0,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false);
+//        Player playerOne = new Player(roll.newRoll(),0,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false);
+//        GameLoop mockedGameLoop = mock(GameLoop.class);
+//        when(mockedGameLoop.winner(playerOne,playerTwo)).thenReturn();
+//        System.out.println(mockedScoringCombinations.chance(hand));
+//    }
     @Test
     public void yahtzeeTest_unhappy() {
         Dice[] hand = {

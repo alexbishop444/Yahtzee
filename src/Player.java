@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 
 public class Player {
+    boolean roll1 = false;
+    boolean roll2 = false;
+    boolean roll3 = false;
     boolean chance = false;
     boolean yahtzee = false;
 
@@ -32,24 +35,8 @@ public class Player {
         return deck;
     }
 
-    public Player(ArrayList<Dice> deck, int score, boolean chance, boolean yahtzee, boolean ones, boolean twos, boolean threes, boolean fours, boolean fives, boolean sixes, boolean pair, boolean twoPairs, boolean threeOfAKind, boolean fourOfAKind, boolean smallStraight, boolean largeStraight, boolean fullHouse) {
-        this.chance = chance;
-        this.yahtzee = yahtzee;
-        this.ones = ones;
-        this.twos = twos;
-        this.threes = threes;
-        this.fours = fours;
-        this.fives = fives;
-        this.sixes = sixes;
-        this.pair = pair;
-        this.twoPairs = twoPairs;
-        this.threeOfAKind = threeOfAKind;
-        this.fourOfAKind = fourOfAKind;
-        this.smallStraight = smallStraight;
-        this.largeStraight = largeStraight;
-        this.fullHouse = fullHouse;
+    public Player(ArrayList<Dice> deck) {
         this.deck = deck;
-        this.score = score;
     }
 
     public boolean check() {
@@ -57,6 +44,12 @@ public class Player {
             return true;
         }
         return false;
+    }
+
+    public void reset() {
+        this.roll1 = true;
+        this.roll2 = true;
+        this.roll3 = true;
     }
 
     public boolean checkTest() {
