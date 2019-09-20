@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class ScoreCard {
 
@@ -21,6 +22,17 @@ public class ScoreCard {
         scoreCard.put("largeStraight",false);
         scoreCard.put("fullHouse",false);
 
+    }
+
+    public boolean check() {
+        for(Map.Entry<String, Boolean> entry : scoreCard.entrySet()) {
+            String key = entry.getKey();
+            Boolean value = entry.getValue();
+            if(!value) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

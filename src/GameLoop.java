@@ -21,11 +21,11 @@ public class GameLoop {
                 options(playerOne);
                 choices(playerOne);
                 System.out.println("Your total score is:" + playerOne.score);
-//                if (playerTwo.check() && playerOne.check()) {
-//                    winner(playerOne,playerTwo);
-//                    System.out.println("Game over");
-//                    gameover = true;
-//                }
+                if (playerTwo.scoreCardClass.check() && playerOne.scoreCardClass.check()) {
+                    winner(playerOne,playerTwo);
+                    System.out.println("Game over");
+                    gameover = true;
+                }
             }
             else if(turn) {
                 playerOne.reset();
@@ -34,10 +34,10 @@ public class GameLoop {
                 options(playerTwo);
                 choices(playerTwo);
                 System.out.println("Your total score is:" + playerTwo.score);
-//                if (playerTwo.check() && playerOne.check()) {
-//                    winner(playerOne,playerTwo);
-//                    gameover = true;
-//                }
+                if (playerTwo.scoreCardClass.check() && playerOne.scoreCardClass.check()) {
+                    winner(playerOne,playerTwo);
+                    gameover = true;
+                }
             }
         }while(!gameover);
     }
