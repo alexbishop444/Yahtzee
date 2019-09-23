@@ -26,7 +26,6 @@ public class ScoreCard {
 
     public boolean check() {
         for(Map.Entry<String, Boolean> entry : scoreCard.entrySet()) {
-            String key = entry.getKey();
             Boolean value = entry.getValue();
             if(!value) {
                 return false;
