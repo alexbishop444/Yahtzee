@@ -5,7 +5,7 @@ public class GameLoop {
 
     private boolean gameover;
     boolean turn;
-
+    boolean rollChoice;
 
     Scanner scanner = new Scanner(System.in);
     ScoringCombinations score = new ScoringCombinations();
@@ -15,11 +15,12 @@ public class GameLoop {
         System.out.println("Welcome to Yahtzee, Player one it is your turn");
         do {
             if(!turn) {
+                rollChoice = false;
                 playerTwo.reset();
                 System.out.println("These are your cards.");
                 System.out.println(playerOne.deck.toString());
                 options(playerOne);
-                choices(playerOne);
+                choices(playerOne,playerOne.deck);
                 System.out.println("Your total score is:" + playerOne.score);
                 if (playerTwo.scoreCardClass.check() && playerOne.scoreCardClass.check()) {
                     winner(playerOne,playerTwo);
@@ -28,11 +29,12 @@ public class GameLoop {
                 }
             }
             else if(turn) {
+                rollChoice = false;
                 playerOne.reset();
                 System.out.println("Player twos turn. These are your cards:");
                 System.out.println(playerTwo.deck.toString());
                 options(playerTwo);
-                choices(playerTwo);
+                choices(playerTwo,playerTwo.deck);
                 System.out.println("Your total score is:" + playerTwo.score);
                 if (playerTwo.scoreCardClass.check() && playerOne.scoreCardClass.check()) {
                     winner(playerOne,playerTwo);
@@ -60,7 +62,7 @@ public class GameLoop {
         System.out.println("15. Yahtzee used:  " + player.scoreCard.get("yahtzee"));
     }
 
-    private void choices(Player player) {
+    private void choices(Player player, ArrayList<Dice> playerArray) {
         String choice = scanner.nextLine();
         if(choice.equals("1") && !player.scoreCard.get("chance")) {
             turn ^= true;
@@ -146,12 +148,27 @@ public class GameLoop {
             System.out.println(score.fullHouse(convertArray(player.deck)));
             player.setDeck(newRoll());
             player.scoreCard.put("fullHouse",true);
-        } else if (choice.equals("15") && !player.scoreCard.get("yahtzee")){
+        } else if (choice.equals("15") && !player.scoreCard.get("yahtzee")) {
             turn ^= true;
             player.score += score.yahtzee(convertArray(player.deck));
             System.out.println(score.yahtzee((convertArray(player.deck))));
             player.setDeck(newRoll());
-            player.scoreCard.put("yahtzee",true);
+            player.scoreCard.put("yahtzee", true);
+        } else if(choice.equals("r")) {
+            while(!rollChoice) {
+                System.out.println("What dice do you want to re-roll? Pick from 1-5 separated by commas");
+                changeHeld(playerArray);
+                player.deck = reroll(player,playerArray);
+                System.out.println("These are your cards, are you happy to use these?");
+                System.out.println(player.deck.toString());
+                String playerRollChoice = scanner.nextLine();
+                if(playerRollChoice.equals("y")) {
+                    rollChoice = true;
+                    options(player);
+                    choices(player,player.deck);
+                }
+            }
+
         } else {
             System.out.println("Invalid Input try again");
         }
@@ -196,11 +213,10 @@ public class GameLoop {
             System.out.println("Player Two Wins");
             result = GameResult.playerTwoWins;
         }
-        System.out.println(result);
         return result;
     }
 
-    public ArrayList<Dice> rerollArrray(Dice[] arr) {
+    public ArrayList<Dice> rerollArrray(ArrayList<Dice> arr) {
         ArrayList<Dice> updatedArray = new ArrayList<>();
         for (Dice item:arr) {
             if(item.held) {
@@ -213,17 +229,28 @@ public class GameLoop {
         return updatedArray;
     }
 
-    public ArrayList<Dice> reroll(Player player) {
+    public ArrayList<Dice> reroll(Player player, ArrayList<Dice> arr) {
         if(!player.roll1) {
-
+            return rerollArrray(arr);
         } else if(!player.roll2) {
-
+            return rerollArrray(arr);
         } else if(!player.roll3) {
-
+            return rerollArrray(arr);
         } else {
             System.out.println("You have used up all your turns");
         }
         return null;
+    }
+
+    public ArrayList<Dice> changeHeld(ArrayList<Dice> playerArr) {
+        char[] choiceArr = scanner.nextLine().replace(",","").toCharArray(); //index numbers
+            for (char item:choiceArr) {
+                int charValue = Character.getNumericValue(item) - 1;
+                Dice changeDice = playerArr.get(charValue);
+                changeDice.held = false;
+            }
+            //Changes dice that need to be rolled again statuses to held: false, returns the updated array.
+            return playerArr;
     }
 
 
