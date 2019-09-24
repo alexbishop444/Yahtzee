@@ -50,7 +50,7 @@ public class GameLoop {
     }
 
         private void options(Player player) {
-            for(Map.Entry<ScoringCategory, Boolean> entry : scoreCard.getScoreCard().entrySet()) {
+            for(Map.Entry<ScoringCategory, Boolean> entry : player.scoreCard.getScoreCard().entrySet()) {
                 ScoringCategory key = entry.getKey();
                 Boolean value = entry.getValue();
                 System.out.println(key.getValue() + " " + key.toString() + " " + "Used " + value);
