@@ -244,12 +244,4 @@ public class YahtzeeTests {
         int actualNoHouse = game.fullHouse(handNoHouse);
         Assert.assertEquals(expectedNoHouse,actualNoHouse);
     }
-    @Test
-    public void keyTest() {
-        GameLoop roll = new GameLoop();
-        Player playerOne = new Player(roll.newRoll());
-        System.out.println(playerOne.scoreCard.get("chance"));
-        playerOne.scoreCard.put("chance",true);
-        System.out.println(playerOne.scoreCard.get("chance"));
-    }
 }

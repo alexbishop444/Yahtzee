@@ -3,29 +3,39 @@ import java.util.Map;
 
 public class ScoreCard {
 
-    HashMap<String, Boolean> scoreCard = new HashMap<String, Boolean>();
+    private HashMap<ScoringCategory, Boolean> scoreCard = new HashMap<ScoringCategory, Boolean>();
+
+
 
     public ScoreCard() {
-        scoreCard.put("chance",false);
-        scoreCard.put("yahtzee",false);
-        scoreCard.put("ones",false);
-        scoreCard.put("twos",false);
-        scoreCard.put("threes",false);
-        scoreCard.put("fours",false);
-        scoreCard.put("fives",false);
-        scoreCard.put("sixes",false);
-        scoreCard.put("pair",false);
-        scoreCard.put("twoPairs",false);
-        scoreCard.put("threeOfAKind",false);
-        scoreCard.put("fourOfAKind",false);
-        scoreCard.put("smallStraight",false);
-        scoreCard.put("largeStraight",false);
-        scoreCard.put("fullHouse",false);
+        scoreCard.put(ScoringCategory.CHANCE,false);
+        scoreCard.put(ScoringCategory.ONES,false);
+        scoreCard.put(ScoringCategory.TWOS,false);
+        scoreCard.put(ScoringCategory.THREES,false);
+        scoreCard.put(ScoringCategory.FOURS,false);
+        scoreCard.put(ScoringCategory.FIVES,false);
+        scoreCard.put(ScoringCategory.SIXES,false);
+        scoreCard.put(ScoringCategory.PAIR,false);
+        scoreCard.put(ScoringCategory.TWOPAIRS,false);
+        scoreCard.put(ScoringCategory.THREEOFAKIND,false);
+        scoreCard.put(ScoringCategory.FOUROFAKIND,false);
+        scoreCard.put(ScoringCategory.SMALLSTRAIGHT,false);
+        scoreCard.put(ScoringCategory.LARGESTRAIGHT,false);
+        scoreCard.put(ScoringCategory.FULLHOUSE,false);
+        scoreCard.put(ScoringCategory.YAHTZEE,false);
 
     }
 
-    public boolean check() {
-        for(Map.Entry<String, Boolean> entry : scoreCard.entrySet()) {
+    public HashMap<ScoringCategory, Boolean> getScoreCard() {
+        return scoreCard;
+    }
+
+    public boolean isScoringCategoryUsed(ScoringCategory category) {
+        return scoreCard.get(category);
+    }
+
+    public boolean isGameOver() {
+        for(Map.Entry<ScoringCategory, Boolean> entry : scoreCard.entrySet()) {
             Boolean value = entry.getValue();
             if(!value) {
                 return false;
