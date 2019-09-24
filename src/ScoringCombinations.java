@@ -194,19 +194,17 @@ public class ScoringCombinations implements IScoringCombinations {
         for (Map.Entry<ScoringCategory, Boolean> entry : scoreCard.getScoreCard().entrySet()) {
             ScoringCategory key = entry.getKey();
             Boolean value = entry.getValue();
-            System.out.println(key.getValue() + " " + key.toString() + " " + "Used " + value);
-            player.setDeck(dice.newRoll());
             if (key.getValue() == num) {
                 player.scoreCard.getScoreCard().put(key, true);
             }
         }
         }
 
-        public void scoreCombinationCall (Integer num, Player player, ArrayList < Dice > deck){
+        public void scoreCombinationCall (Integer num, Player player){
             for (Map.Entry<ScoringCategory, Boolean> entry : scoreCard.getScoreCard().entrySet()) {
                 ScoringCategory key = entry.getKey();
                 Boolean value = entry.getValue();
-                System.out.println(key.getValue() + " " + key.toString() + " " + "Used " + value);
+            }
                 switch (num) {
                     case 0:
                         player.score += chance(dice.convertArray(player.deck));
@@ -255,7 +253,7 @@ public class ScoringCombinations implements IScoringCombinations {
                         setScoreCombosToFalseAndNewRoll(player,num);
                 }
 
-            }
+
         }
 
 
