@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbe0f7cf-aa7b-46da-8995-105366a07c5a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DiceRollMethods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ScoringCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/YahtzeeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/YahtzeeTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/GameLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/GameLoop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/ScoreCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/ScoreCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/ScoringCombinations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/ScoringCombinations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Yahtzee/YahtzeeTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Yahtzee/YahtzeeTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ScoreCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoreCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScoringCombinations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoringCombinations.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,7 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="221" />
+    <option name="myElementSize" value="237" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -33,65 +44,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ScoringCategory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+              <folding>
+                <element signature="e#309#310#0" expanded="true" />
+                <element signature="e#337#338#0" expanded="true" />
+                <element signature="e#288#289#0" expanded="true" />
+                <element signature="e#322#323#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameLoop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ScoreCard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#116#133#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/IScoringCombinations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameResult.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="252" column="62" selection-start-line="252" selection-start-column="62" selection-end-line="252" selection-end-column="62" />
+            <state relative-caret-position="248">
+              <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,21 +73,52 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ScoringCombinations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1437">
-              <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+            <state relative-caret-position="-2692">
+              <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3027#3028#0" expanded="true" />
-                <element signature="e#3130#3131#0" expanded="true" />
+                <element signature="e#3120#3121#0" expanded="true" />
+                <element signature="e#3223#3224#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dice.java">
+        <entry file="file://$PROJECT_DIR$/src/ScoreCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="454">
+              <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#143#169#0" expanded="true" />
+                <element signature="e#1087#1088#0" expanded="true" />
+                <element signature="e#1119#1120#0" expanded="true" />
+                <element signature="e#1106#1107#0" expanded="true" />
+                <element signature="e#1130#1131#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#657#658#0" expanded="true" />
+                <element signature="e#712#713#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DiceRollMethods.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-63">
               <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
@@ -144,16 +146,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/GameMethods.java" />
-        <option value="$PROJECT_DIR$/src/ScoringCombinations.java" />
         <option value="$PROJECT_DIR$/src/IScoringCombinations.java" />
         <option value="$PROJECT_DIR$/src/Booleans.java" />
         <option value="$PROJECT_DIR$/src/Dice.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/GameResult.java" />
+        <option value="$PROJECT_DIR$/src/ScoringCategories.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/Tests/YahtzeeTests.java" />
         <option value="$PROJECT_DIR$/src/ScoreCard.java" />
+        <option value="$PROJECT_DIR$/src/DiceRollMethods.java" />
+        <option value="$PROJECT_DIR$/src/ScoringCombinations.java" />
         <option value="$PROJECT_DIR$/src/GameLoop.java" />
+        <option value="$PROJECT_DIR$/src/ScoringCategory.java" />
       </list>
     </option>
   </component>
@@ -179,6 +184,11 @@
               <item name="Yahtzee" type="b2602c69:ProjectViewProjectNode" />
               <item name="Yahtzee" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Yahtzee" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Yahtzee" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -289,7 +299,7 @@
       <workItem from="1567989491942" duration="6927000" />
       <workItem from="1568072301310" duration="1104000" />
       <workItem from="1568074308201" duration="44000" />
-      <workItem from="1568074846025" duration="51160000" />
+      <workItem from="1568074846025" duration="59924000" />
     </task>
     <servers />
   </component>
@@ -326,7 +336,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87517000" />
+    <option name="totallyTimeSpent" value="96281000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -341,7 +351,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4255102" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33163264" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3989796" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -438,32 +448,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ScoringCombinations.java">
+    <entry file="file://$PROJECT_DIR$/src/Dice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1437">
-          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3027#3028#0" expanded="true" />
-            <element signature="e#3130#3131#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
+    <entry file="file://$PROJECT_DIR$/src/GameResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="252" column="62" selection-start-line="252" selection-start-column="62" selection-end-line="252" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/IScoringCombinations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <caret line="1" column="27" lean-forward="true" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="245" column="5" selection-start-line="245" selection-start-column="5" selection-end-line="245" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -477,47 +489,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameResult.java">
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="390">
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#712#713#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dice.java">
+    <entry file="file://$PROJECT_DIR$/src/DiceRollMethods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
+        <state relative-caret-position="-63">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ScoreCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        <state relative-caret-position="454">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#116#133#0" expanded="true" />
+            <element signature="e#143#169#0" expanded="true" />
+            <element signature="e#1087#1088#0" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+            <element signature="e#1106#1107#0" expanded="true" />
+            <element signature="e#1130#1131#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/ScoringCombinations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+        <state relative-caret-position="-2692">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3120#3121#0" expanded="true" />
+            <element signature="e#3223#3224#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameLoop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+        <state relative-caret-position="248">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ScoringCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding>
+            <element signature="e#309#310#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#322#323#0" expanded="true" />
           </folding>
         </state>
       </provider>

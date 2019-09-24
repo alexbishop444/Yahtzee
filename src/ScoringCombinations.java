@@ -4,6 +4,8 @@ import java.util.Collections;
 @SuppressWarnings("Duplicates")
 
 public class ScoringCombinations implements IScoringCombinations {
+    DiceRollMethods dice = new DiceRollMethods();
+    ScoreCard scoreCard = new ScoreCard();
 
     public ArrayList<Integer> numberArray(Dice[] arr) {
         ArrayList<Integer> numbers = new ArrayList<>();
@@ -187,5 +189,75 @@ public class ScoringCombinations implements IScoringCombinations {
 
         return sum;
     }
+
+    private void setScoreCombosToFalseAndNewRoll(Player player, Integer num) {
+        for (Map.Entry<ScoringCategory, Boolean> entry : scoreCard.getScoreCard().entrySet()) {
+            ScoringCategory key = entry.getKey();
+            Boolean value = entry.getValue();
+            System.out.println(key.getValue() + " " + key.toString() + " " + "Used " + value);
+            player.setDeck(dice.newRoll());
+            if (key.getValue() == num) {
+                player.scoreCard.getScoreCard().put(key, true);
+            }
+        }
+        }
+
+        public void scoreCombinationCall (Integer num, Player player, ArrayList < Dice > deck){
+            for (Map.Entry<ScoringCategory, Boolean> entry : scoreCard.getScoreCard().entrySet()) {
+                ScoringCategory key = entry.getKey();
+                Boolean value = entry.getValue();
+                System.out.println(key.getValue() + " " + key.toString() + " " + "Used " + value);
+                switch (num) {
+                    case 0:
+                        player.score += chance(dice.convertArray(player.deck));
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 1:
+                        player.score += addUpSameNumbers(dice.convertArray(player.deck),1);
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 2:
+                        player.score += addUpSameNumbers(dice.convertArray(player.deck),2);
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 3:
+                        player.score += addUpSameNumbers(dice.convertArray(player.deck),3);
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 4:
+                        player.score += addUpSameNumbers(dice.convertArray(player.deck),4);
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 5:
+                        player.score += addUpSameNumbers(dice.convertArray(player.deck),5);
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 6:
+                        player.score += addUpSameNumbers(dice.convertArray(player.deck),6);
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 7:
+                        player.score += pair(dice.convertArray(player.deck));
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 8:
+                        player.score += twoPair(dice.convertArray(player.deck));
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 9:
+                        player.score += threes(dice.convertArray(player.deck));
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 10:
+                        player.score += foursCode(dice.convertArray(player.deck));
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 11:
+                        player.score += smallStraight(dice.convertArray(player.deck));
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 12:
+                        player.score += largeStraight(dice.convertArray(player.deck));
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 13:
+                        player.score += fullHouse(dice.convertArray(player.deck));
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                    case 14:
+                        player.score += yahtzee(dice.convertArray(player.deck));
+                        setScoreCombosToFalseAndNewRoll(player,num);
+                }
+
+            }
+        }
+
+
 
 }

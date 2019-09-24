@@ -9,8 +9,7 @@ public class Player {
 
     ArrayList<Dice> deck;
 
-    ScoreCard scoreCardClass = new ScoreCard();
-    HashMap<String, Boolean> scoreCard = scoreCardClass.scoreCard;
+    ScoreCard scoreCard = new ScoreCard();
 
     public void setDeck(ArrayList<Dice> deck) {
         this.deck = deck;
@@ -29,5 +28,10 @@ public class Player {
         this.roll2 = true;
         this.roll3 = true;
     }
+
+    public boolean isScoringCategoryUsed(ScoringCategory category) {
+        return scoreCard.isScoringCategoryUsed(category);
+    }
+
 
 }
