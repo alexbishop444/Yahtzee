@@ -15,50 +15,39 @@ public class GameLoop {
     Player playerTwo = new Player(dice.newRoll());
     ScoreCard scoreCard = new ScoreCard();
     public void start() {
-        options(playerOne);
-        for(Map.Entry<ScoringCategory, Boolean> entry : scoreCard.getScoreCard().entrySet()) {
-            ScoringCategory key = entry.getKey();
-            Boolean value = entry.getValue();
-            if(key.getValue() == 2) {
-                System.out.println(key);
+        System.out.println("Welcome to Yahtzee, Player one it is your turn");
+        do {
+            if(!turn) {
+                rollChoice = false;
+                playerTwo.reset();
+                System.out.println("These are your cards.");
+                System.out.println(playerOne.deck.toString());
+                options(playerOne);
+                choices(playerOne,playerOne.deck);
+                System.out.println("Your total score is:" + playerOne.score);
+                if (playerTwo.scoreCard.isGameOver() && playerOne.scoreCard.isGameOver()) {
+                    winner(playerOne,playerTwo);
+                    System.out.println("Game over");
+                    gameover = true;
+                }
+                turn ^= true;
             }
-        }
-//        System.out.println("Welcome to Yahtzee, Player one it is your turn");
-//        do {
-//            if(!turn) {
-//                rollChoice = false;
-//                playerTwo.reset();
-//                System.out.println("These are your cards.");
-//                System.out.println(playerOne.deck.toString());
-//                options(playerOne);
-//                choices(playerOne,playerOne.deck);
-//                System.out.println("Your total score is:" + playerOne.score);
-//                if (playerTwo.scoreCard.isGameOver() && playerOne.scoreCard.isGameOver()) {
-//                    winner(playerOne,playerTwo);
-//                    System.out.println("Game over");
-//                    gameover = true;
-//                }
-//            }
-//            else if(turn) {
-//                rollChoice = false;
-//                playerOne.reset();
-//                System.out.println("Player twos turn. These are your cards:");
-//                System.out.println(playerTwo.deck.toString());
-//                options(playerTwo);
-//                choices(playerTwo,playerTwo.deck);
-//                System.out.println("Your total score is:" + playerTwo.score);
-//                if (playerTwo.scoreCard.isGameOver() && playerOne.scoreCard.isGameOver()) {
-//                    winner(playerOne,playerTwo);
-//                    gameover = true;
-//                }
-//            }
-//        }while(!gameover);
+            else if(turn) {
+                rollChoice = false;
+                playerOne.reset();
+                System.out.println("Player twos turn. These are your cards:");
+                System.out.println(playerTwo.deck.toString());
+                options(playerTwo);
+                choices(playerTwo,playerTwo.deck);
+                System.out.println("Your total score is:" + playerTwo.score);
+                if (playerTwo.scoreCard.isGameOver() && playerOne.scoreCard.isGameOver()) {
+                    winner(playerOne,playerTwo);
+                    gameover = true;
+                }
+                turn ^= true;
+            }
+        }while(!gameover);
     }
-
-//    private void options(Player player) {
-//        for (ScoringCategory item:ScoringCategory.values()) {
-//            System.out.println(item.getValue() + " " + item.toString() + " Used");
-//        }
 
         private void options(Player player) {
             for(Map.Entry<ScoringCategory, Boolean> entry : scoreCard.getScoreCard().entrySet()) {
@@ -66,25 +55,12 @@ public class GameLoop {
                 Boolean value = entry.getValue();
                 System.out.println(key.getValue() + " " + key.toString() + " " + "Used " + value);
             }
-
-//        System.out.println("1. Chance used: " + player.;
-//        System.out.println("2. Add up all Ones used:  " + player.isScoringCategoryUsed(ScoringCategory.ONES));
-//        System.out.println("3. Add up all Twos used:  " + player.isScoringCategoryUsed(ScoringCategory.TWOS));
-//        System.out.println("4. Add up all Three used:  " + player.isScoringCategoryUsed(ScoringCategory.THREES));
-//        System.out.println("5. Add up all Fours used:  " + player.isScoringCategoryUsed(ScoringCategory.FOURS));
-//        System.out.println("6. Add up all Fives used:  " + player.isScoringCategoryUsed(ScoringCategory.FIVES));
-//        System.out.println("7. Add up all Sixes used:  " + player.isScoringCategoryUsed(ScoringCategory.SIXES));
-//        System.out.println("8. Pair used:  " + player.isScoringCategoryUsed(ScoringCategory.PAIR));
-//        System.out.println("9. Two Pair used:  " + player.scoreCard.get("twoPairs"));
-//        System.out.println("10. Three of a kind:  " + player.scoreCard.get("threeOfAKind"));
-//        System.out.println("11. Four of a kind used:  " + player.scoreCard.get("fourOfAKind"));
-//        System.out.println("12. Small Straight used:  " + player.scoreCard.get("smallStraight"));
-//        System.out.println("13. Large Straight used:  " + player.scoreCard.get("largeStraight"));
-//        System.out.println("14. Full House used:  " + player.scoreCard.get("fullHouse"));
-//        System.out.println("15. Yahtzee used:  " + player.scoreCard.get("yahtzee"));
     }
 
     private void choices(Player player, ArrayList<Dice> playerArray) {
+        Integer choice = Integer.parseInt(scanner.nextLine());
+        score.scoreCombinationCall(choice,player);
+        player.setDeck(dice.newRoll());
     }
 //        Integer choice = Integer.parseInt(scanner.nextLine());
 //        ScoringCategory.
