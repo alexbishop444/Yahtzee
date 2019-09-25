@@ -34,6 +34,10 @@ public class ScoreCard {
         return scoreCard.get(category);
     }
 
+    public boolean setScoringCategoryToTrue(ScoringCategory category) {
+        return scoreCard.put(category,true);
+    }
+
     public boolean isGameOver() {
         for(Map.Entry<ScoringCategory, Boolean> entry : scoreCard.entrySet()) {
             Boolean value = entry.getValue();

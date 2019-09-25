@@ -25,6 +25,8 @@ public enum ScoringCategory {
         this.value = value;
     }
 
+    private static ScoringCategory[] allValues = values();
+    public static ScoringCategory fromOrdinal(int n) {return allValues[n];}
 
 }
 
