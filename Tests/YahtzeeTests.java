@@ -140,7 +140,7 @@ public class YahtzeeTests {
                 new Dice(true,2),
                 new Dice(true,5),
                 new Dice(true,5),
-                new Dice(true,5),
+                new Dice(true,6),
         };
         int expectedOnePair = 10;
         int actualOnePair = game.pair(hand);

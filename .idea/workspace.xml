@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbe0f7cf-aa7b-46da-8995-105366a07c5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/YahtzeeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/YahtzeeTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/IScoringCombinations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/IScoringCombinations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/ScoringCombinations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/ScoringCombinations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Yahtzee/YahtzeeTests.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IScoringCombinations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IScoringCombinations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScoreCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoreCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScoringCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoringCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ScoringCombinations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoringCombinations.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="75">
+              <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2085">
-              <caret line="139" column="33" lean-forward="true" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
+            <state relative-caret-position="333">
+              <caret line="142" column="31" selection-start-line="142" selection-start-column="31" selection-end-line="142" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameLoop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="50" />
+            <state relative-caret-position="333">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/src/ScoringCategory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
+              <caret column="29" selection-start-column="29" selection-end-column="29" />
               <folding>
                 <element signature="e#309#310#0" expanded="true" />
                 <element signature="e#337#338#0" expanded="true" />
@@ -79,15 +73,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ScoringCombinations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="737">
-              <caret line="227" column="63" selection-start-line="227" selection-start-column="63" selection-end-line="227" selection-end-column="63" />
+            <state relative-caret-position="165">
+              <caret line="74" column="52" lean-forward="true" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3507#3508#0" expanded="true" />
-                <element signature="e#3610#3611#0" expanded="true" />
+                <element signature="e#3567#3568#0" expanded="true" />
+                <element signature="e#3670#3671#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/src/ScoreCard.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#143#169#0" expanded="true" />
@@ -139,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/src/DiceRollMethods.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -168,7 +162,6 @@
         <option value="$PROJECT_DIR$/src/GameMethods.java" />
         <option value="$PROJECT_DIR$/src/Booleans.java" />
         <option value="$PROJECT_DIR$/src/Dice.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/GameResult.java" />
         <option value="$PROJECT_DIR$/src/ScoringCategories.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
@@ -176,9 +169,10 @@
         <option value="$PROJECT_DIR$/src/IScoringCombinations.java" />
         <option value="$PROJECT_DIR$/src/ScoringCategory.java" />
         <option value="$PROJECT_DIR$/src/ScoreCard.java" />
-        <option value="$PROJECT_DIR$/src/ScoringCombinations.java" />
         <option value="$PROJECT_DIR$/src/GameLoop.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/Tests/YahtzeeTests.java" />
+        <option value="$PROJECT_DIR$/src/ScoringCombinations.java" />
       </list>
     </option>
   </component>
@@ -241,7 +235,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.YahtzeeTests">
+  <component name="RunManager" selected="JUnit.YahtzeeTests.pairTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Yahtzee" />
@@ -254,16 +248,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="YahtzeeTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="YahtzeeTests.addUpSameNumbersTestOnes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Yahtzee" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="YahtzeeTests" />
-      <option name="METHOD_NAME" value="addUpSameNumbersTestOnes" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -288,20 +272,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="YahtzeeTests.pairTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Yahtzee" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="YahtzeeTests" />
+      <option name="METHOD_NAME" value="pairTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.YahtzeeTests" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.YahtzeeTests.addUpSameNumbersTestOnes" />
       <item itemvalue="JUnit.YahtzeeTests.mockTest" />
       <item itemvalue="JUnit.YahtzeeTests.keyTest" />
+      <item itemvalue="JUnit.YahtzeeTests.pairTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.YahtzeeTests" />
+        <item itemvalue="JUnit.YahtzeeTests.pairTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.YahtzeeTests" />
         <item itemvalue="JUnit.YahtzeeTests.keyTest" />
         <item itemvalue="JUnit.YahtzeeTests.mockTest" />
-        <item itemvalue="JUnit.YahtzeeTests.addUpSameNumbersTestOnes" />
       </list>
     </recent_temporary>
   </component>
@@ -319,20 +313,11 @@
       <workItem from="1567989491942" duration="6927000" />
       <workItem from="1568072301310" duration="1104000" />
       <workItem from="1568074308201" duration="44000" />
-      <workItem from="1568074846025" duration="71446000" />
+      <workItem from="1568074846025" duration="72162000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="YahtzeeTests_addUpSameNumbersTestOnes - 2019.09.18 at 14h 41m 49s.xml">
-      <configuration name="YahtzeeTests.addUpSameNumbersTestOnes" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_addUpSameNumbersTestOnes - 2019.09.18 at 14h 42m 06s.xml">
-      <configuration name="YahtzeeTests.addUpSameNumbersTestOnes" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="YahtzeeTests_mockTest - 2019.09.19 at 11h 56m 47s.xml">
-      <configuration name="YahtzeeTests.mockTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="YahtzeeTests_mockTest - 2019.09.19 at 12h 20m 41s.xml">
       <configuration name="YahtzeeTests.mockTest" configurationId="JUnit" />
     </history-entry>
@@ -354,15 +339,24 @@
     <history-entry file="YahtzeeTests_keyTest - 2019.09.20 at 11h 21m 20s.xml">
       <configuration name="YahtzeeTests.keyTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="YahtzeeTests - 2019.09.25 at 10h 19m 43s.xml">
+      <configuration name="YahtzeeTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests - 2019.09.25 at 10h 29m 38s.xml">
+      <configuration name="YahtzeeTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YahtzeeTests_pairTest - 2019.09.25 at 10h 31m 18s.xml">
+      <configuration name="YahtzeeTests.pairTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107803000" />
+    <option name="totallyTimeSpent" value="108519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2997558" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2997558" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -371,7 +365,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22244897" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31836733" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27653062" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -513,24 +507,14 @@
     <entry file="file://$PROJECT_DIR$/src/DiceRollMethods.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ScoreCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#143#169#0" expanded="true" />
@@ -544,22 +528,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ScoringCombinations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="737">
-          <caret line="227" column="63" selection-start-line="227" selection-start-column="63" selection-end-line="227" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3507#3508#0" expanded="true" />
-            <element signature="e#3610#3611#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ScoringCategory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
           <folding>
             <element signature="e#309#310#0" expanded="true" />
             <element signature="e#337#338#0" expanded="true" />
@@ -571,8 +543,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameLoop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="50" />
+        <state relative-caret-position="333">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -581,10 +553,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/YahtzeeTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2085">
-          <caret line="139" column="33" lean-forward="true" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
+        <state relative-caret-position="333">
+          <caret line="142" column="31" selection-start-line="142" selection-start-column="31" selection-end-line="142" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ScoringCombinations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="74" column="52" lean-forward="true" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3567#3568#0" expanded="true" />
+            <element signature="e#3670#3671#0" expanded="true" />
           </folding>
         </state>
       </provider>
