@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class DiceRollMethods {
 
-    public Dice[] convertArray(ArrayList<Dice> arr) {
+    public Dice[] convertArrayToPrimitive(ArrayList<Dice> arr) {
         Dice[] arr2 = arr.toArray(new Dice[arr.size()]);
         return arr2;
     }

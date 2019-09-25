@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class ScoreCard {
 
-    private HashMap<ScoringCategory, Boolean> scoreCard = new HashMap<ScoringCategory, Boolean>();
+    private HashMap<ScoringCategory, Boolean> scoreCard = new HashMap<>();
 
 
 
@@ -16,12 +16,12 @@ public class ScoreCard {
         scoreCard.put(ScoringCategory.FIVES,false);
         scoreCard.put(ScoringCategory.SIXES,false);
         scoreCard.put(ScoringCategory.PAIR,false);
-        scoreCard.put(ScoringCategory.TWOPAIRS,false);
-        scoreCard.put(ScoringCategory.THREEOFAKIND,false);
-        scoreCard.put(ScoringCategory.FOUROFAKIND,false);
-        scoreCard.put(ScoringCategory.SMALLSTRAIGHT,false);
-        scoreCard.put(ScoringCategory.LARGESTRAIGHT,false);
-        scoreCard.put(ScoringCategory.FULLHOUSE,false);
+        scoreCard.put(ScoringCategory.TWO_PAIRS,false);
+        scoreCard.put(ScoringCategory.THREE_OF_A_KIND,false);
+        scoreCard.put(ScoringCategory.FOUR_OF_A_KIND,false);
+        scoreCard.put(ScoringCategory.SMALL_STRAIGHT,false);
+        scoreCard.put(ScoringCategory.LARGE_STRAIGHT,false);
+        scoreCard.put(ScoringCategory.FULL_HOUSE,false);
         scoreCard.put(ScoringCategory.YAHTZEE,false);
 
     }
