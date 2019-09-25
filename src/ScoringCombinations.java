@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class ScoringCombinations implements IScoringCombinations {
     DiceRollMethods dice = new DiceRollMethods();
-    ScoreCard scoreCard = new ScoreCard();
+//    ScoreCard scoreCard = new ScoreCard();
 
     public ArrayList<Integer> numberArray(Dice[] arr) {
         ArrayList<Integer> numbers = new ArrayList<>();
@@ -15,13 +15,19 @@ public class ScoringCombinations implements IScoringCombinations {
         return numbers;
     }
 
-    public int chance(Dice[] arr) {
+    public int chance(Dice[] arr,Player player) {
+        if(player.scoreCard.getScoreCard().get(ScoringCategory.CHANCE)) {
+            return 0;
+        }
         ArrayList<Integer> numbers = numberArray(arr);
         int[] arr2 = convertIntegers(numbers);
         int sum = IntStream.of(arr2).sum();
         return sum;
     }
-    public int yahtzee(Dice[] arr) {
+    public int yahtzee(Dice[] arr, Player player) {
+        if(player.scoreCard.getScoreCard().get(ScoringCategory.YAHTZEE)) {
+            return 0;
+        }
         ArrayList<Integer> numbers = numberArray(arr);
         int[] arr2 = convertIntegers(numbers);
         IntStream intStream1 = Arrays.stream(arr2);
@@ -33,10 +39,13 @@ public class ScoringCombinations implements IScoringCombinations {
         }
     }
 
-    public int addUpSameNumbers(Dice[] arr, int arg) {
+    public int addUpSameNumbers(Dice[] arr, ScoringCategory category, Player player) {
+        if(player.scoreCard.isScoringCategoryUsed(category)) {
+            return 0;
+        }
         int sum = 0;
         for (Dice item : arr) {
-            if (item.value == arg) {
+            if (item.value == category.getValue()) {
                 sum += item.value;
             }
         }
@@ -190,72 +199,59 @@ public class ScoringCombinations implements IScoringCombinations {
         return sum;
     }
 
-    private void setScoreCombosToFalseAndNewRoll(Player player, Integer num) {
-        for (Map.Entry<ScoringCategory, Boolean> entry : scoreCard.getScoreCard().entrySet()) {
-            ScoringCategory key = entry.getKey();
-            Boolean value = entry.getValue();
-            if (key.getValue() == num) {
-                player.scoreCard.getScoreCard().put(key, true);
-            }
+    private void setScoreCombosToTrue(Player player, ScoringCategory category) {
+        player.scoreCard.setScoringCategoryToTrue(category);
+    }
+
+    public void scoreCombinationCall (ScoringCategory category, Player player){
+        Dice[] deck = dice.convertArray(player.deck);
+        switch (category) {
+            case CHANCE:
+                player.score += chance(deck,player);
+                break;
+            case ONES:
+                player.score += addUpSameNumbers(deck, category, player);
+                break;
+            case TWOS:
+                player.score += addUpSameNumbers(deck, category, player);
+                break;
+            case THREES:
+                player.score += addUpSameNumbers(deck, category, player);
+                break;
+            case FOURS:
+                player.score += addUpSameNumbers(deck, category, player);
+                break;
+            case FIVES:
+                player.score += addUpSameNumbers(deck, category, player);
+                break;
+            case SIXES:
+                player.score += addUpSameNumbers(deck, category, player);
+                break;
+            case PAIR:
+                player.score += pair(deck);
+                break;
+            case TWOPAIRS:
+                player.score += twoPair(deck);
+                break;
+            case THREEOFAKIND:
+                player.score += threes(deck);
+                break;
+            case FOUROFAKIND:
+                player.score += foursCode(deck);
+                break;
+            case SMALLSTRAIGHT:
+                player.score += smallStraight(deck);
+                break;
+            case LARGESTRAIGHT:
+                player.score += largeStraight(deck);
+                break;
+            case FULLHOUSE:
+                player.score += fullHouse(deck);
+                break;
+            case YAHTZEE:
+                player.score += yahtzee(deck, player);
+                break;
         }
-        }
-
-        public void scoreCombinationCall (Integer num, Player player){
-            for (Map.Entry<ScoringCategory, Boolean> entry : scoreCard.getScoreCard().entrySet()) {
-                ScoringCategory key = entry.getKey();
-                Boolean value = entry.getValue();
-            }
-                switch (num) {
-                    case 0:
-                        player.score += chance(dice.convertArray(player.deck));
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 1:
-                        player.score += addUpSameNumbers(dice.convertArray(player.deck),1);
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 2:
-                        player.score += addUpSameNumbers(dice.convertArray(player.deck),2);
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 3:
-                        player.score += addUpSameNumbers(dice.convertArray(player.deck),3);
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 4:
-                        player.score += addUpSameNumbers(dice.convertArray(player.deck),4);
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 5:
-                        player.score += addUpSameNumbers(dice.convertArray(player.deck),5);
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 6:
-                        player.score += addUpSameNumbers(dice.convertArray(player.deck),6);
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 7:
-                        player.score += pair(dice.convertArray(player.deck));
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 8:
-                        player.score += twoPair(dice.convertArray(player.deck));
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 9:
-                        player.score += threes(dice.convertArray(player.deck));
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 10:
-                        player.score += foursCode(dice.convertArray(player.deck));
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 11:
-                        player.score += smallStraight(dice.convertArray(player.deck));
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 12:
-                        player.score += largeStraight(dice.convertArray(player.deck));
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 13:
-                        player.score += fullHouse(dice.convertArray(player.deck));
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                    case 14:
-                        player.score += yahtzee(dice.convertArray(player.deck));
-                        setScoreCombosToFalseAndNewRoll(player,num);
-                }
-
-
-        }
-
-
-
+        setScoreCombosToTrue(player,category);
+    }
 }

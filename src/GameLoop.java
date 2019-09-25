@@ -50,16 +50,16 @@ public class GameLoop {
     }
 
         private void options(Player player) {
-            for(Map.Entry<ScoringCategory, Boolean> entry : player.scoreCard.getScoreCard().entrySet()) {
-                ScoringCategory key = entry.getKey();
-                Boolean value = entry.getValue();
-                System.out.println(key.getValue() + " " + key.toString() + " " + "Used " + value);
+            for (ScoringCategory category:ScoringCategory.values()) {
+                System.out.println(category.getValue() + " " + category.toString() + " " + player.scoreCard.isScoringCategoryUsed(category));
+
             }
     }
 
     private void choices(Player player, ArrayList<Dice> playerArray) {
-        Integer choice = Integer.parseInt(scanner.nextLine());
-        score.scoreCombinationCall(choice,player);
+        Integer input = Integer.parseInt(scanner.nextLine());
+        ScoringCategory choiceToScoringCategory = ScoringCategory.fromOrdinal(input);
+        score.scoreCombinationCall(choiceToScoringCategory,player);
         player.setDeck(dice.newRoll());
     }
 //        Integer choice = Integer.parseInt(scanner.nextLine());
