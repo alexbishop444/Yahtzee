@@ -5,7 +5,6 @@ import java.util.Collections;
 
 public class ScoringCombinations implements IScoringCombinations {
     DiceRollMethods dice = new DiceRollMethods();
-//    ScoreCard scoreCard = new ScoreCard();
 
     public ArrayList<Integer> numberArray(Dice[] arr) {
         ArrayList<Integer> numbers = new ArrayList<>();
@@ -20,7 +19,7 @@ public class ScoringCombinations implements IScoringCombinations {
             return 0;
         }
         ArrayList<Integer> numbers = numberArray(arr);
-        int[] arr2 = convertIntegers(numbers);
+        int[] arr2 = convertToIntegersArray(numbers);
         int sum = IntStream.of(arr2).sum();
         return sum;
     }
@@ -29,7 +28,7 @@ public class ScoringCombinations implements IScoringCombinations {
             return 0;
         }
         ArrayList<Integer> numbers = numberArray(arr);
-        int[] arr2 = convertIntegers(numbers);
+        int[] arr2 = convertToIntegersArray(numbers);
         IntStream intStream1 = Arrays.stream(arr2);
         boolean allEqual = intStream1.distinct().limit(2).count() <= 1;
         if (allEqual) {
@@ -54,7 +53,7 @@ public class ScoringCombinations implements IScoringCombinations {
 
     public ArrayList<Dice> findDuplicates(Dice[] arr) {
         ArrayList<Integer> numbers = numberArray(arr);
-        int[] arr2 = convertIntegers(numbers);
+        int[] arr2 = convertToIntegersArray(numbers);
         ArrayList<Dice> numbersDuplicated = new <Dice>ArrayList();
 
         for (int i = 0; i < arr2.length; i++) {
@@ -102,11 +101,11 @@ public class ScoringCombinations implements IScoringCombinations {
         return sum;
     }
 
-    public int threes(Dice[] dices) {
+    public int threeOfAKind(Dice[] dices) {
         return SharedThreesAndFoursCode(dices, 3);
     }
 
-    public int foursCode(Dice[] dices)
+    public int fourOfAKind(Dice[] dices)
     {
         return SharedThreesAndFoursCode(dices, 4);
     }
@@ -147,7 +146,7 @@ public class ScoringCombinations implements IScoringCombinations {
     public int smallStraight(Dice[] arr) {
         int[] compare = {1,2,3,4,5};
         ArrayList<Integer> numbers = numberArray(arr);
-        int[] arr2 = convertIntegers(numbers);
+        int[] arr2 = convertToIntegersArray(numbers);
         if(Arrays.equals(compare, arr2)) {
             return 15;
         }
@@ -155,7 +154,7 @@ public class ScoringCombinations implements IScoringCombinations {
     }
     public int largeStraight(Dice[] arr) {
         ArrayList<Integer> numbers = numberArray(arr);
-        int[] arr2 = convertIntegers(numbers);
+        int[] arr2 = convertToIntegersArray(numbers);
         int[] compare = {2,3,4,5,6};
         if(Arrays.equals(compare, arr2)) {
             return 20;
@@ -163,7 +162,7 @@ public class ScoringCombinations implements IScoringCombinations {
         return 0;
     }
 
-    public int[] convertIntegers(ArrayList<Integer> integers)
+    public int[] convertToIntegersArray(ArrayList<Integer> integers)
     {
         int[] ret = new int[integers.size()];
         for (int i=0; i < ret.length; i++)
@@ -211,20 +210,10 @@ public class ScoringCombinations implements IScoringCombinations {
                 player.score += chance(deck,player);
                 break;
             case ONES:
-                player.score += addUpSameNumbers(deck, category, player);
-                break;
             case TWOS:
-                player.score += addUpSameNumbers(deck, category, player);
-                break;
             case THREES:
-                player.score += addUpSameNumbers(deck, category, player);
-                break;
             case FOURS:
-                player.score += addUpSameNumbers(deck, category, player);
-                break;
             case FIVES:
-                player.score += addUpSameNumbers(deck, category, player);
-                break;
             case SIXES:
                 player.score += addUpSameNumbers(deck, category, player);
                 break;
@@ -235,10 +224,10 @@ public class ScoringCombinations implements IScoringCombinations {
                 player.score += twoPair(deck);
                 break;
             case THREEOFAKIND:
-                player.score += threes(deck);
+                player.score += threeOfAKind(deck);
                 break;
             case FOUROFAKIND:
-                player.score += foursCode(deck);
+                player.score += fourOfAKind(deck);
                 break;
             case SMALLSTRAIGHT:
                 player.score += smallStraight(deck);
