@@ -1,7 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
-import java.util.List;
 
 public class YahtzeeTests {
     ScoringCombinations game = new ScoringCombinations();
@@ -172,7 +171,7 @@ public class YahtzeeTests {
                 new Dice(true,1),
         };
         int expected =6;
-        int actual = game.threes(hand);
+        int actual = game.threeOfAKind(hand);
         Assert.assertEquals(expected,actual);
 
     }
@@ -186,7 +185,7 @@ public class YahtzeeTests {
                 new Dice(true,5),
         };
         int expectedFour = 12;
-        int actualFour = game.foursCode(hand);
+        int actualFour = game.fourOfAKind(hand);
         Assert.assertEquals(expectedFour,actualFour);
 
     }
@@ -202,7 +201,7 @@ public class YahtzeeTests {
                 new Dice(true,5),
         };
         int expectedOnePair = 20;
-        int actualOnePair = game.foursCode(hand);
+        int actualOnePair = game.fourOfAKind(hand);
         Assert.assertEquals(expectedOnePair,actualOnePair);
 
     }
