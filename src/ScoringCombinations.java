@@ -38,12 +38,12 @@ public class ScoringCombinations implements IScoringCombinations {
         }
     }
 
-    public int addUpSameNumbers(Dice[] arr, ScoringCategory category, Player player) {
+    public int addUpSameNumbers(Dice[] bucket, ScoringCategory category, Player player) {
         if(player.scoreCard.isScoringCategoryUsed(category)) {
             return 0;
         }
         int sum = 0;
-        for (Dice item : arr) {
+        for (Dice item : bucket) {
             if (item.value == category.getValue()) {
                 sum += item.value;
             }
@@ -146,17 +146,17 @@ public class ScoringCombinations implements IScoringCombinations {
     public int smallStraight(Dice[] bucket) {
         int[] compare = {1,2,3,4,5};
         ArrayList<Integer> numbers = numberArray(bucket);
-        int[] arr2 = convertToIntegersArray(numbers);
-        if(Arrays.equals(compare, arr2)) {
+        int[] diceValues = convertToIntegersArray(numbers);
+        if(Arrays.equals(compare, diceValues)) {
             return 15;
         }
         return 0;
     }
     public int largeStraight(Dice[] bucket) {
         ArrayList<Integer> numbers = numberArray(bucket);
-        int[] arr2 = convertToIntegersArray(numbers);
+        int[] diceValues = convertToIntegersArray(numbers);
         int[] compare = {2,3,4,5,6};
-        if(Arrays.equals(compare, arr2)) {
+        if(Arrays.equals(compare, diceValues)) {
             return 20;
         }
         return 0;
