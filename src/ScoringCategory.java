@@ -7,12 +7,12 @@ public enum ScoringCategory {
     FIVES(5),
     SIXES(6),
     PAIR(7),
-    TWOPAIRS(8),
-    THREEOFAKIND(9),
-    FOUROFAKIND(10),
-    SMALLSTRAIGHT(11),
-    LARGESTRAIGHT(12),
-    FULLHOUSE(13),
+    TWO_PAIRS(8),
+    THREE_OF_A_KIND(9),
+    FOUR_OF_A_KIND(10),
+    SMALL_STRAIGHT(11),
+    LARGE_STRAIGHT(12),
+    FULL_HOUSE(13),
     YAHTZEE(14);
 
     public int getValue() {
