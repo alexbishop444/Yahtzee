@@ -8,37 +8,6 @@ public class YahtzeeTests {
     Player player = new Player(dice.newRoll());
     Player playerTwo = new Player(dice.newRoll());
     @Test
-    public void chanceTest() {
-        Dice[] hand = {
-                new Dice(true,2),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,1),
-                new Dice(true,6),
-        };
-        int expected = 19;
-//        int actual = game.chance(hand);
-//        Assert.assertEquals(expected,actual);
-
-
-        // mock creation
-        ScoringCombinations mockedScoringCombinations = mock(ScoringCombinations.class);
-
-//        using mock object - it does not throw any "unexpected interaction" exception
-//        mockedScoringCombinations.chance();
-
-
-        // SomeFunction()
-        // gameloop
-        // call scoringcombinations.yahtzee returns some value
-        // if that value > 50 you win
-        // else you lose
-
-
-//        when(mockedScoringCombinations.chance(hand)).thenThrow(100);
-//        System.out.println(mockedScoringCombinations.chance(hand));
-    }
-    @Test
     public void mockChanceToReturn100() {
         Dice[] hand = {
                 new Dice(true,2),
