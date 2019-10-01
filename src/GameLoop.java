@@ -45,7 +45,7 @@ public class GameLoop {
         }while(!gameover);
     }
 
-        private void scoreOptionsList(Player player) {
+    private void scoreOptionsList(Player player) {
             for (ScoringCategory category:ScoringCategory.values()) {
                 System.out.println(category.getValue() + " " + category.toString() + " " + player.scoreCard.isScoringCategoryUsed(category));
 
