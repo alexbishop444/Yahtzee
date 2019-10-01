@@ -6,6 +6,7 @@ public class YahtzeeTests {
     ScoringCombinations game = new ScoringCombinations();
     DiceRollMethods dice = new DiceRollMethods();
     Player player = new Player(dice.newRoll());
+    Player playerTwo = new Player(dice.newRoll());
     @Test
     public void chanceTest() {
         Dice[] hand = {
@@ -37,21 +38,26 @@ public class YahtzeeTests {
 //        when(mockedScoringCombinations.chance(hand)).thenThrow(100);
 //        System.out.println(mockedScoringCombinations.chance(hand));
     }
-//    @Test
-//    public void mockTest() {
-//        Dice[] hand = {};
-//        // mock creation
-//        ScoringCombinations mockedScoringCombinations = mock(ScoringCombinations.class);
-//        when(mockedScoringCombinations.chance(hand)).thenReturn(100);
-//        System.out.println(mockedScoringCombinations.chance(hand));
-//    }
+    @Test
+    public void mockChanceToReturn100() {
+        Dice[] hand = {
+                new Dice(true,2),
+                new Dice(true,5),
+                new Dice(true,5),
+                new Dice(true,1),
+                new Dice(true,6),
+        };
+        // mock creation
+        ScoringCombinations mockedScoringCombinations = mock(ScoringCombinations.class);
+        when(mockedScoringCombinations.chance(hand,player)).thenReturn(100);
+        System.out.println(mockedScoringCombinations.chance(hand,player));
+    }
 //    @Test
 //    public void winningPlayerOneTest() {
 //        Dice[] hand = {};
 //        // mock creation
-//        GameLoop roll = new GameLoop();
-//        Player playerTwo = new Player(roll.newRoll(),0,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false);
-//        Player playerOne = new Player(roll.newRoll(),0,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false);
+//        Player playerTwo = new Player(dice.newRoll());
+//        Player playerOne = new Player(dice.newRoll());
 //        GameLoop mockedGameLoop = mock(GameLoop.class);
 //        when(mockedGameLoop.winner(playerOne,playerTwo)).thenReturn();
 //        System.out.println(mockedScoringCombinations.chance(hand));
@@ -244,5 +250,32 @@ public class YahtzeeTests {
         int expectedNoHouse =8;
         int actualNoHouse = game.fullHouse(handNoHouse);
         Assert.assertEquals(expectedNoHouse,actualNoHouse);
+    }
+    @Test
+    public void winningPlayerTwoTest() {
+        GameLoop gameLoop = new GameLoop();
+        player.score = 400;
+        playerTwo.score = 500;
+        GameResult expected = GameResult.playerTwoWins;
+        GameResult actual = gameLoop.winner(player,playerTwo);
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void winningPlayerOneTest() {
+        GameLoop gameLoop = new GameLoop();
+        player.score = 56;
+        playerTwo.score = 54;
+        GameResult expected = GameResult.playerOneWins;
+        GameResult actual = gameLoop.winner(player,playerTwo);
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void drawTest() {
+        GameLoop gameLoop = new GameLoop();
+        player.score = 400;
+        playerTwo.score = 400;
+        GameResult expected = GameResult.draw;
+        GameResult actual = gameLoop.winner(player,playerTwo);
+        Assert.assertEquals(expected,actual);
     }
 }
