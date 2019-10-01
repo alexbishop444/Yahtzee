@@ -1,7 +1,6 @@
 import java.util.*;
 import java.util.stream.*;
 import java.util.Collections;
-@SuppressWarnings("Duplicates")
 
 public class ScoringCombinations implements IScoringCombinations {
     DiceRollMethods dice = new DiceRollMethods();
@@ -29,8 +28,7 @@ public class ScoringCombinations implements IScoringCombinations {
         }
         ArrayList<Integer> numbers = numberArray(bucket);
         int[] diceValues = convertToIntegersArray(numbers);
-        IntStream intStream1 = Arrays.stream(diceValues);
-        boolean allEqual = intStream1.distinct().limit(2).count() <= 1;
+        boolean allEqual = Arrays.stream(diceValues).distinct().limit(2).count() <= 1;
         if (allEqual) {
             return 50;
         } else {
