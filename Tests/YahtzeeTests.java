@@ -4,7 +4,7 @@ import static org.mockito.Mockito.*;
 
 public class YahtzeeTests {
     ScoringCombinations game = new ScoringCombinations();
-    DiceRollMethods dice = new DiceRollMethods();
+    Bucket dice = new Bucket();
     Player player = new Player(dice.newRoll());
     Player playerTwo = new Player(dice.newRoll());
     @Test

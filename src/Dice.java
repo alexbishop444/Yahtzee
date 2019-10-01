@@ -19,4 +19,11 @@ public class Dice {
     {
 
     }
+
+    public void roll() {
+        double randomDouble = Math.random();
+        randomDouble = randomDouble * 6 + 1;
+        int randomInt = (int) randomDouble;
+        value = randomInt;
+    }
 }

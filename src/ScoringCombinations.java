@@ -3,9 +3,8 @@ import java.util.stream.*;
 import java.util.Collections;
 
 public class ScoringCombinations implements IScoringCombinations {
-    DiceRollMethods dice = new DiceRollMethods();
 
-    public ArrayList<Integer> numberArray(Dice[] bucket) {
+    public ArrayList<Integer> getDiceValues(Dice[] bucket) {
         ArrayList<Integer> numbers = new ArrayList<>();
         for (Dice d:bucket) {
             numbers.add(d.value);
@@ -14,19 +13,19 @@ public class ScoringCombinations implements IScoringCombinations {
     }
 
     public int chance(Dice[] bucket,Player player) {
-        if(player.scoreCard.getScoreCard().get(ScoringCategory.CHANCE)) {
+        if(player.scoreCard.isScoringCategoryUsed(ScoringCategory.CHANCE)) {
             return 0;
         }
-        ArrayList<Integer> numbers = numberArray(bucket);
+        ArrayList<Integer> numbers = getDiceValues(bucket);
         int[] diceValues = convertToIntegersArray(numbers);
         int sum = IntStream.of(diceValues).sum();
         return sum;
     }
     public int yahtzee(Dice[] bucket, Player player) {
-        if(player.scoreCard.getScoreCard().get(ScoringCategory.YAHTZEE)) {
+        if(player.scoreCard.isScoringCategoryUsed(ScoringCategory.YAHTZEE)) {
             return 0;
         }
-        ArrayList<Integer> numbers = numberArray(bucket);
+        ArrayList<Integer> numbers = getDiceValues(bucket);
         int[] diceValues = convertToIntegersArray(numbers);
         boolean allEqual = Arrays.stream(diceValues).distinct().limit(2).count() <= 1;
         if (allEqual) {
@@ -50,7 +49,7 @@ public class ScoringCombinations implements IScoringCombinations {
     }
 
     public ArrayList<Dice> findDuplicates(Dice[] bucket) {
-        ArrayList<Integer> numbers = numberArray(bucket);
+        ArrayList<Integer> numbers = getDiceValues(bucket);
         int[] diceValues = convertToIntegersArray(numbers);
         ArrayList<Dice> numbersDuplicated = new <Dice>ArrayList();
 
@@ -70,7 +69,7 @@ public class ScoringCombinations implements IScoringCombinations {
         int sum = 0;
         ArrayList<Dice> duplicates = findDuplicates(bucket);
         Dice[] convertedBucket = dice.convertArrayToPrimitive(duplicates);
-        ArrayList<Integer> numbers = numberArray(convertedBucket);
+        ArrayList<Integer> numbers = getDiceValues(convertedBucket);
         if (duplicates.size() == 0) {
             return 0;
         }
@@ -143,7 +142,7 @@ public class ScoringCombinations implements IScoringCombinations {
 
     public int smallStraight(Dice[] bucket) {
         int[] compare = {1,2,3,4,5};
-        ArrayList<Integer> numbers = numberArray(bucket);
+        ArrayList<Integer> numbers = getDiceValues(bucket);
         int[] diceValues = convertToIntegersArray(numbers);
         if(Arrays.equals(compare, diceValues)) {
             return 15;
@@ -151,7 +150,7 @@ public class ScoringCombinations implements IScoringCombinations {
         return 0;
     }
     public int largeStraight(Dice[] bucket) {
-        ArrayList<Integer> numbers = numberArray(bucket);
+        ArrayList<Integer> numbers = getDiceValues(bucket);
         int[] diceValues = convertToIntegersArray(numbers);
         int[] compare = {2,3,4,5,6};
         if(Arrays.equals(compare, diceValues)) {
@@ -202,10 +201,10 @@ public class ScoringCombinations implements IScoringCombinations {
     }
 
     public void scoreCombinationCall (ScoringCategory category, Player player){
-        Dice[] deck = dice.convertArrayToPrimitive(player.deck);
+        Dice[] dice = player.bucket.getDice();
         switch (category) {
             case CHANCE:
-                player.score += chance(deck,player);
+                player.score += chance(dice,player);
                 break;
             case ONES:
             case TWOS:
@@ -213,31 +212,31 @@ public class ScoringCombinations implements IScoringCombinations {
             case FOURS:
             case FIVES:
             case SIXES:
-                player.score += addUpSameNumbers(deck, category, player);
+                player.score += addUpSameNumbers(dice, category, player);
                 break;
             case PAIR:
-                player.score += pair(deck);
+                player.score += pair(dice);
                 break;
             case TWO_PAIRS:
-                player.score += twoPair(deck);
+                player.score += twoPair(dice);
                 break;
             case THREE_OF_A_KIND:
-                player.score += threeOfAKind(deck);
+                player.score += threeOfAKind(dice);
                 break;
             case FOUR_OF_A_KIND:
-                player.score += fourOfAKind(deck);
+                player.score += fourOfAKind(dice);
                 break;
             case SMALL_STRAIGHT:
-                player.score += smallStraight(deck);
+                player.score += smallStraight(dice);
                 break;
             case LARGE_STRAIGHT:
-                player.score += largeStraight(deck);
+                player.score += largeStraight(dice);
                 break;
             case FULL_HOUSE:
-                player.score += fullHouse(deck);
+                player.score += fullHouse(dice);
                 break;
             case YAHTZEE:
-                player.score += yahtzee(deck, player);
+                player.score += yahtzee(dice, player);
                 break;
         }
         setScoreCombosToTrue(player,category);
