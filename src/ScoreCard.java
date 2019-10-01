@@ -26,9 +26,6 @@ public class ScoreCard {
 
     }
 
-    public HashMap<ScoringCategory, Boolean> getScoreCard() {
-        return scoreCard;
-    }
 
     public boolean isScoringCategoryUsed(ScoringCategory category) {
         return scoreCard.get(category);

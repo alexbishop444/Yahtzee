@@ -4,19 +4,16 @@ public class GameLoop {
 
     private boolean gameover;
     private boolean turn;
-    private boolean rollChoice;
     private Scanner scanner = new Scanner(System.in);
-    private DiceRollMethods dice = new DiceRollMethods();
     private ScoringCombinations score = new ScoringCombinations();
-    private Player playerOne = new Player(dice.newRoll());
-    private Player playerTwo = new Player(dice.newRoll());
+    private Player playerOne = new Player();
+    private Player playerTwo = new Player();
     public void start() {
         System.out.println("Welcome to Yahtzee, Player one it is your turn");
         do {
             if(!turn) {
-                rollChoice = false;
-                playerTwo.reset();
-                System.out.println("These are your cards.");
+                playerOne.bucket.rollDice();
+                System.out.println("These are your dice.");
                 System.out.println(playerOne.deck.toString());
                 scoreOptionsList(playerOne);
                 choices(playerOne,playerOne.deck);
@@ -26,11 +23,10 @@ public class GameLoop {
                     System.out.println("Game over");
                     gameover = true;
                 }
+                playerOne.bucket.resetDiceHeld();
                 turn ^= true;
             }
             else if(turn) {
-                rollChoice = false;
-                playerOne.reset();
                 System.out.println("Player twos turn. These are your cards:");
                 System.out.println(playerTwo.deck.toString());
                 scoreOptionsList(playerTwo);
@@ -56,7 +52,8 @@ public class GameLoop {
         int input = Integer.parseInt(scanner.nextLine());
         ScoringCategory choiceToScoringCategory = ScoringCategory.fromOrdinal(input);
         score.scoreCombinationCall(choiceToScoringCategory,player);
-        player.setDeck(dice.newRoll());
+        player.bucket.resetDiceHeld();
+        player.bucket.rollDice();
     }
 
     public GameResult winner(Player player1,Player player2) {
