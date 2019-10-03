@@ -1,7 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-public class GameConditionTests {
+public class GameLoopTests {
     Player player = new Player();
     Player playerTwo = new Player();
 
