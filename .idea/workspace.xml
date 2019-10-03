@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbe0f7cf-aa7b-46da-8995-105366a07c5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/YahtzeeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/YahtzeeTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/Dice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/DiceRollMethods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/GameLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/GameLoop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/ScoreCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/ScoreCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/ScoringCombinations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/ScoringCombinations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Yahtzee/YahtzeeTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Yahtzee/YahtzeeTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bucket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScoringCombinations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoringCombinations.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameLoop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
+            <state relative-caret-position="231">
+              <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Bucket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+            <state relative-caret-position="225">
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
               <folding>
                 <element signature="e#105#106#0" expanded="true" />
                 <element signature="e#132#133#0" expanded="true" />
@@ -333,7 +320,7 @@
       <workItem from="1568072301310" duration="1104000" />
       <workItem from="1568074308201" duration="44000" />
       <workItem from="1568074846025" duration="76198000" />
-      <workItem from="1569459541604" duration="12305000" />
+      <workItem from="1569459541604" duration="12941000" />
     </task>
     <servers />
   </component>
@@ -370,7 +357,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124860000" />
+    <option name="totallyTimeSpent" value="125496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -385,7 +372,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32040817" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40918368" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27653062" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -565,8 +552,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Bucket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        <state relative-caret-position="225">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding>
             <element signature="e#105#106#0" expanded="true" />
             <element signature="e#132#133#0" expanded="true" />
@@ -583,8 +570,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameLoop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
+        <state relative-caret-position="231">
+          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

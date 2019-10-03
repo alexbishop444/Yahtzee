@@ -27,7 +27,7 @@ public class YahtzeeTests {
 //        Player playerTwo = new Player(dice.newRoll());
 //        Player playerOne = new Player(dice.newRoll());
 //        GameLoop mockedGameLoop = mock(GameLoop.class);
-//        when(mockedGameLoop.winner(playerOne,playerTwo)).thenReturn();
+//        when(mockedGameLoop.returnGameResult(playerOne,playerTwo)).thenReturn();
 //        System.out.println(mockedScoringCombinations.chance(hand));
 //    }
     @Test
@@ -225,7 +225,7 @@ public class YahtzeeTests {
         player.score = 400;
         playerTwo.score = 500;
         GameResult expected = GameResult.playerTwoWins;
-        GameResult actual = gameLoop.winner(player,playerTwo);
+        GameResult actual = gameLoop.returnGameResult(player,playerTwo);
         Assert.assertEquals(expected,actual);
     }
     @Test
@@ -234,7 +234,7 @@ public class YahtzeeTests {
         player.score = 56;
         playerTwo.score = 54;
         GameResult expected = GameResult.playerOneWins;
-        GameResult actual = gameLoop.winner(player,playerTwo);
+        GameResult actual = gameLoop.returnGameResult(player,playerTwo);
         Assert.assertEquals(expected,actual);
     }
     @Test
@@ -243,7 +243,7 @@ public class YahtzeeTests {
         player.score = 400;
         playerTwo.score = 400;
         GameResult expected = GameResult.draw;
-        GameResult actual = gameLoop.winner(player,playerTwo);
+        GameResult actual = gameLoop.returnGameResult(player,playerTwo);
         Assert.assertEquals(expected,actual);
     }
 }
