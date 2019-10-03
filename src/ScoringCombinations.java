@@ -67,8 +67,9 @@ public class ScoringCombinations implements IScoringCombinations {
         // For loop gets duplicate numbers by only adding if there is a duplicate, add its to the numbersDuplicated array,
         // finds the highest number in that array since they can only be dupes then adds that number twice
         int sum = 0;
+        Bucket convert = new Bucket();
         ArrayList<Dice> duplicates = findDuplicates(bucket);
-        Dice[] convertedBucket = dice.convertArrayToPrimitive(duplicates);
+        Dice[] convertedBucket = convert.convertArrayToPrimitive(duplicates);
         ArrayList<Integer> numbers = getDiceValues(convertedBucket);
         if (duplicates.size() == 0) {
             return 0;

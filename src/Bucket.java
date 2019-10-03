@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Bucket {
-    private Dice[] dice;
+    private Dice[] dice = new Dice[5];
 
     public Dice[] getDice() {
         return dice;
