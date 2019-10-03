@@ -1,11 +1,12 @@
 import org.junit.Assert;
 import org.junit.Test;
-import static org.mockito.Mockito.*;
 
-public class YahtzeeTests {
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class ScoringCombinationTests {
     ScoringCombinations game = new ScoringCombinations();
     Player player = new Player();
-    Player playerTwo = new Player();
     @Test
     public void mockChanceToReturn100() {
         Dice[] hand = {
@@ -15,21 +16,10 @@ public class YahtzeeTests {
                 new Dice(true,1),
                 new Dice(true,6),
         };
-        // mock creation
         ScoringCombinations mockedScoringCombinations = mock(ScoringCombinations.class);
         when(mockedScoringCombinations.chance(hand,player)).thenReturn(100);
         System.out.println(mockedScoringCombinations.chance(hand,player));
     }
-//    @Test
-//    public void winningPlayerOneTest() {
-//        Dice[] hand = {};
-//        // mock creation
-//        Player playerTwo = new Player(dice.newRoll());
-//        Player playerOne = new Player(dice.newRoll());
-//        GameLoop mockedGameLoop = mock(GameLoop.class);
-//        when(mockedGameLoop.returnGameResult(playerOne,playerTwo)).thenReturn();
-//        System.out.println(mockedScoringCombinations.chance(hand));
-//    }
     @Test
     public void yahtzeeTest_unhappy() {
         Dice[] hand = {
@@ -218,32 +208,5 @@ public class YahtzeeTests {
         int expectedNoHouse =8;
         int actualNoHouse = game.fullHouse(handNoHouse);
         Assert.assertEquals(expectedNoHouse,actualNoHouse);
-    }
-    @Test
-    public void winningPlayerTwoTest() {
-        GameLoop gameLoop = new GameLoop();
-        player.score = 400;
-        playerTwo.score = 500;
-        GameResult expected = GameResult.playerTwoWins;
-        GameResult actual = gameLoop.returnGameResult(player,playerTwo);
-        Assert.assertEquals(expected,actual);
-    }
-    @Test
-    public void winningPlayerOneTest() {
-        GameLoop gameLoop = new GameLoop();
-        player.score = 56;
-        playerTwo.score = 54;
-        GameResult expected = GameResult.playerOneWins;
-        GameResult actual = gameLoop.returnGameResult(player,playerTwo);
-        Assert.assertEquals(expected,actual);
-    }
-    @Test
-    public void drawTest() {
-        GameLoop gameLoop = new GameLoop();
-        player.score = 400;
-        playerTwo.score = 400;
-        GameResult expected = GameResult.draw;
-        GameResult actual = gameLoop.returnGameResult(player,playerTwo);
-        Assert.assertEquals(expected,actual);
     }
 }
