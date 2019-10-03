@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 public class GameLoop {
 
-    private boolean gameover;
+    private boolean gameOver;
     private boolean turn;
     private Scanner scanner = new Scanner(System.in);
     private ScoringCombinations score = new ScoringCombinations();
@@ -13,13 +13,14 @@ public class GameLoop {
         System.out.println("Welcome to Yahtzee, Player one it is your turn");
         do {
             if(!turn) {
+                System.out.println("Player one it is your turn");
                 playerTurnCycle(playerOne);
             }
             else if(turn) {
                 System.out.println("Player two it is your turn");
                 playerTurnCycle(playerTwo);
             }
-        }while(!gameover);
+        }while(!gameOver);
     }
 
     private void playerTurnCycle(Player player) {
@@ -27,12 +28,12 @@ public class GameLoop {
         System.out.println("These are your dice.");
         System.out.println(Arrays.toString(player.bucket.getDice()));
         printOutScoreCategories(player);
-        choices(player);
+        playerCategorySelectionCalculate(player);
         System.out.println("Your total score is:" + player.score);
         if (playerTwo.scoreCard.isGameOver() && playerOne.scoreCard.isGameOver()) {
-            winner(playerOne,playerTwo);
+            returnGameResult(playerOne,playerTwo);
             System.out.println("Game over");
-            gameover = true;
+            gameOver = true;
         }
         player.bucket.resetDiceHeld();
         turn ^= true;
@@ -45,7 +46,7 @@ public class GameLoop {
             }
     }
 
-    private void choices(Player player) {
+    private void playerCategorySelectionCalculate(Player player) {
         int input = Integer.parseInt(scanner.nextLine());
         ScoringCategory choiceToScoringCategory = ScoringCategory.fromOrdinal(input);
         score.scoreCombinationCall(choiceToScoringCategory,player);
@@ -53,7 +54,7 @@ public class GameLoop {
         player.bucket.rollDice();
     }
 
-    public GameResult winner(Player player1,Player player2) {
+    public GameResult returnGameResult(Player player1, Player player2) {
         GameResult result = GameResult.none;
         if(player1.score > player2.score) {
             System.out.println("Player one score:" + player1.score);
