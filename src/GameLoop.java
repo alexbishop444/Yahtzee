@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 public class GameLoop {
 
@@ -8,47 +9,43 @@ public class GameLoop {
     private ScoringCombinations score = new ScoringCombinations();
     private Player playerOne = new Player();
     private Player playerTwo = new Player();
-    public void start() {
+    public void runGame() {
         System.out.println("Welcome to Yahtzee, Player one it is your turn");
         do {
             if(!turn) {
-                playerOne.bucket.rollDice();
-                System.out.println("These are your dice.");
-                System.out.println(playerOne.deck.toString());
-                scoreOptionsList(playerOne);
-                choices(playerOne,playerOne.deck);
-                System.out.println("Your total score is:" + playerOne.score);
-                if (playerTwo.scoreCard.isGameOver() && playerOne.scoreCard.isGameOver()) {
-                    winner(playerOne,playerTwo);
-                    System.out.println("Game over");
-                    gameover = true;
-                }
-                playerOne.bucket.resetDiceHeld();
-                turn ^= true;
+                playerTurnCycle(playerOne);
             }
             else if(turn) {
-                System.out.println("Player twos turn. These are your cards:");
-                System.out.println(playerTwo.deck.toString());
-                scoreOptionsList(playerTwo);
-                choices(playerTwo,playerTwo.deck);
-                System.out.println("Your total score is:" + playerTwo.score);
-                if (playerTwo.scoreCard.isGameOver() && playerOne.scoreCard.isGameOver()) {
-                    winner(playerOne,playerTwo);
-                    gameover = true;
-                }
-                turn ^= true;
+                System.out.println("Player two it is your turn");
+                playerTurnCycle(playerTwo);
             }
         }while(!gameover);
     }
 
-    private void scoreOptionsList(Player player) {
+    private void playerTurnCycle(Player player) {
+        player.bucket.rollDice();
+        System.out.println("These are your dice.");
+        System.out.println(Arrays.toString(player.bucket.getDice()));
+        printOutScoreCategories(player);
+        choices(player);
+        System.out.println("Your total score is:" + player.score);
+        if (playerTwo.scoreCard.isGameOver() && playerOne.scoreCard.isGameOver()) {
+            winner(playerOne,playerTwo);
+            System.out.println("Game over");
+            gameover = true;
+        }
+        player.bucket.resetDiceHeld();
+        turn ^= true;
+    }
+
+    private void printOutScoreCategories(Player player) {
             for (ScoringCategory category:ScoringCategory.values()) {
                 System.out.println(category.getValue() + " " + category.toString() + " " + player.scoreCard.isScoringCategoryUsed(category));
 
             }
     }
 
-    private void choices(Player player, ArrayList<Dice> bucket) {
+    private void choices(Player player) {
         int input = Integer.parseInt(scanner.nextLine());
         ScoringCategory choiceToScoringCategory = ScoringCategory.fromOrdinal(input);
         score.scoreCombinationCall(choiceToScoringCategory,player);

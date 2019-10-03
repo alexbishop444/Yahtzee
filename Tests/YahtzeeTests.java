@@ -4,9 +4,8 @@ import static org.mockito.Mockito.*;
 
 public class YahtzeeTests {
     ScoringCombinations game = new ScoringCombinations();
-    Bucket dice = new Bucket();
-    Player player = new Player(dice.newRoll());
-    Player playerTwo = new Player(dice.newRoll());
+    Player player = new Player();
+    Player playerTwo = new Player();
     @Test
     public void mockChanceToReturn100() {
         Dice[] hand = {
