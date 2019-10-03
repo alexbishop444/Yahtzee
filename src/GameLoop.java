@@ -29,6 +29,7 @@ public class GameLoop {
         System.out.println(Arrays.toString(player.bucket.getDice()));
         printOutScoreCategories(player);
         playerCategorySelectionCalculate(player);
+        changeHeld(player.bucket.getDice());
         System.out.println("Your total score is:" + player.score);
         if (playerTwo.scoreCard.isGameOver() && playerOne.scoreCard.isGameOver()) {
             returnGameResult(playerOne,playerTwo);
@@ -75,15 +76,21 @@ public class GameLoop {
         return result;
     }
 
-    public ArrayList<Dice> changeHeld(ArrayList<Dice> bucket) {
+    public Dice[] changeHeld(Dice[] bucket) {
+        Bucket convert = new Bucket();
+        ArrayList<Dice> arrayList = new ArrayList<>();
+        for (Dice item:bucket) {
+            arrayList.add(item);
+        }
         char[] choiceArr = scanner.nextLine().replace(",","").toCharArray(); //index numbers
             for (char item:choiceArr) {
                 int charValue = Character.getNumericValue(item) - 1;
-                Dice changeDice = bucket.get(charValue);
+                Dice changeDice = arrayList.get(charValue);
                 changeDice.held = false;
             }
+            Dice[] updatedBucket = convert.convertArrayToPrimitive(arrayList);
             //Changes dice that need to be rolled again statuses to held: false, returns the updated array.
-            return bucket;
+            return updatedBucket;
     }
 
 
