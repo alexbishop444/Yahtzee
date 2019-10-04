@@ -1,35 +1,43 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 public class GameLoop {
 
     private boolean gameOver;
     private boolean turn;
+    private GameResult gameState;
     private Scanner scanner = new Scanner(System.in);
-    private ScoringCombinations score = new ScoringCombinations();
+    private ScoringCombinations score;
     private Player playerOne = new Player();
     private Player playerTwo = new Player();
+
+    public GameLoop(IScoringCombinations scoringCombinations, Player[] players, int numberOfRerolls)
+    {
+    }
+
     public void runGame() {
+        gameState = GameResult.playing;
         System.out.println("Welcome to Yahtzee, Player one it is your turn");
         do {
             if(!turn) {
                 System.out.println("Player one it is your turn");
-                playerTurnCycle(playerOne);
+                playerTurn(playerOne);
             }
-            else if(turn) {
+            else {
                 System.out.println("Player two it is your turn");
-                playerTurnCycle(playerTwo);
+                playerTurn(playerTwo);
             }
         }while(!gameOver);
     }
 
-    private void playerTurnCycle(Player player) {
+    private void playerTurn(Player player) {
+        // for loop here
         player.bucket.rollDice();
         System.out.println("These are your dice.");
         System.out.println(Arrays.toString(player.bucket.getDice()));
         printOutScoreCategories(player);
         changeHeld(player);
-        playerCategorySelectionCalculate(player);
+        // end for loop
+        getPlayerCategorySelectionAndCalculate(player);
         System.out.println("Your total score is:" + player.score);
         if (playerTwo.scoreCard.isGameOver() && playerOne.scoreCard.isGameOver()) {
             returnGameResult(playerOne,playerTwo);
@@ -47,7 +55,7 @@ public class GameLoop {
             }
     }
 
-    private void playerCategorySelectionCalculate(Player player) {
+    private void getPlayerCategorySelectionAndCalculate(Player player) {
         int input = Integer.parseInt(scanner.nextLine());
         ScoringCategory choiceToScoringCategory = ScoringCategory.fromOrdinal(input);
         score.scoreCombinationCall(choiceToScoringCategory,player);
@@ -55,21 +63,26 @@ public class GameLoop {
         player.bucket.rollDice();
     }
 
-    public GameResult returnGameResult(Player player1, Player player2) {
+    public GameResult GetGameState()
+    {
+        return gameState;
+    }
+
+    public GameResult returnGameResult() {
         GameResult result = GameResult.none;
-        if(player1.score > player2.score) {
-            System.out.println("Player one score:" + player1.score);
-            System.out.println("Player two score:" + player2.score);
+        if(playerOne.score > playerTwo.score) {
+            System.out.println("Player one score:" + playerOne.score);
+            System.out.println("Player two score:" + playerTwo.score);
             System.out.println("Player One Wins");
             result = GameResult.playerOneWins;
-        } else if (player1.score == player2.score) {
-            System.out.println("Player one score:" + player1.score);
-            System.out.println("Player two score:" + player2.score);
+        } else if (playerOne.score == playerTwo.score) {
+            System.out.println("Player one score:" + playerOne.score);
+            System.out.println("Player two score:" + playerTwo.score);
             System.out.println("IT'S A DRAW");
             result = GameResult.draw;
         } else {
-            System.out.println("Player one score:" + player1.score);
-            System.out.println("Player two score:" + player2.score);
+            System.out.println("Player one score:" + playerOne.score);
+            System.out.println("Player two score:" + playerTwo.score);
             System.out.println("Player Two Wins");
             result = GameResult.playerTwoWins;
         }
@@ -77,21 +90,19 @@ public class GameLoop {
     }
 
     public void changeHeld(Player player) {
-        System.out.println("Choose dice to re-roll seperated by commas");
-        Bucket convert = new Bucket();
-        ArrayList<Dice> arrayList = new ArrayList<>();
-        for (Dice item:player.bucket.getDice()) {
-            arrayList.add(item);
+        System.out.println("Choose dice to hold, others will be re-rolled");
+
+        char[] charArray = scanner.nextLine().replace(",","").toCharArray(); //index numbers
+        int[] intArray = new int[charArray.length];
+
+        for (int i = 0; i < charArray.length; i++){
+            intArray[i] = Character.getNumericValue(charArray[i]) - 1;
         }
-        char[] choiceArr = scanner.nextLine().replace(",","").toCharArray(); //index numbers
-            for (char item:choiceArr) {
-                int charValue = Character.getNumericValue(item) - 1;
-                Dice changeDice = arrayList.get(charValue);
-                changeDice.held = false;
-            }
-            player.bucket.setDice(convert.convertArrayToPrimitive(arrayList));
-            player.bucket.rollDice();
-            System.out.println(Arrays.toString(player.bucket.getDice()));
+
+        player.bucket.SetHeldDice(intArray);
+
+        Dice[] dice = player.bucket.getDice();
+        System.out.println(Arrays.toString(dice));
             //Changes dice that need to be rolled again statuses to held: false, returns the updated array.
     }
 
