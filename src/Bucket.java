@@ -3,10 +3,6 @@ import java.util.ArrayList;
 public class Bucket {
     private Dice[] dice = new Dice[5];
 
-    public void setDice(Dice[] dice) {
-        this.dice = dice;
-    }
-
     public Dice[] getDice() {
         return dice;
     }
@@ -27,7 +23,6 @@ public class Bucket {
         for (Dice item : dice) {
             if (!item.held) {
                 item.roll();
-                item.held = true;
             }
         }
     }
@@ -36,6 +31,14 @@ public class Bucket {
         for (Dice item : dice) {
             item.held = false;
         }
+    }
 
+    public void SetHeldDice(int[] diceToHold)
+    {
+        for (int item:diceToHold) {
+
+            Dice changeDice = dice[item];
+            changeDice.held = true;
+        }
     }
 }
