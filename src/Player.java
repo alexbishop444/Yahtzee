@@ -28,8 +28,10 @@ public class Player {
         return bucket;
     }
 
-    public Player() {
+
+    public Player(String name) {
         this.bucket = new Bucket();
+        this.name = name;
     }
 
     public Player[] convertArrayToPrimitive(ArrayList<Player> arr) {
