@@ -1,5 +1,6 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Stream;
+
 public class GameLoop {
 
     private boolean gameOver;
@@ -10,26 +11,26 @@ public class GameLoop {
     private Player playerOne = new Player();
     private Player playerTwo = new Player();
 
-    public GameLoop(IScoringCombinations scoringCombinations, Player[] players, int numberOfRerolls)
-    {
+    public GameLoop(IScoringCombinations scoringCombinations, Player[] players, int numberOfRerolls) {
+//        runGame(players);
     }
 
-    public void runGame() {
+    public void runGame(Player[] players) {
         gameState = GameResult.playing;
         System.out.println("Welcome to Yahtzee, Player one it is your turn");
         do {
             if(!turn) {
                 System.out.println("Player one it is your turn");
-                playerTurn(playerOne);
+                playerTurn(players[0],players);
             }
             else {
                 System.out.println("Player two it is your turn");
-                playerTurn(playerTwo);
+                playerTurn(players[1],players);
             }
         }while(!gameOver);
     }
 
-    private void playerTurn(Player player) {
+    private void playerTurn(Player player, Player[] playerArray) {
         // for loop here
         player.bucket.rollDice();
         System.out.println("These are your dice.");
@@ -40,7 +41,7 @@ public class GameLoop {
         getPlayerCategorySelectionAndCalculate(player);
         System.out.println("Your total score is:" + player.score);
         if (playerTwo.scoreCard.isGameOver() && playerOne.scoreCard.isGameOver()) {
-            returnGameResult(playerOne,playerTwo);
+            returnGameResult(playerArray);
             System.out.println("Game over");
             gameOver = true;
         }
@@ -63,29 +64,28 @@ public class GameLoop {
         player.bucket.rollDice();
     }
 
-    public GameResult GetGameState()
-    {
+    public GameResult GetGameState() {
         return gameState;
     }
 
-    public GameResult returnGameResult() {
+    public GameResult returnGameResult(Player[] players) {
         GameResult result = GameResult.none;
-        if(playerOne.score > playerTwo.score) {
-            System.out.println("Player one score:" + playerOne.score);
-            System.out.println("Player two score:" + playerTwo.score);
-            System.out.println("Player One Wins");
-            result = GameResult.playerOneWins;
-        } else if (playerOne.score == playerTwo.score) {
-            System.out.println("Player one score:" + playerOne.score);
-            System.out.println("Player two score:" + playerTwo.score);
-            System.out.println("IT'S A DRAW");
-            result = GameResult.draw;
-        } else {
-            System.out.println("Player one score:" + playerOne.score);
-            System.out.println("Player two score:" + playerTwo.score);
-            System.out.println("Player Two Wins");
-            result = GameResult.playerTwoWins;
+        Object[] scores = Arrays.stream(players).map(g -> g.score).toArray();
+        for (int i = 0; i < scores.length; i++) {
+            for (int j = i + 1; j < scores.length; j++) {
+                if (scores[i] == (scores[j])) {
+                    System.out.println("It's a draw!");
+                   return GameResult.draw;
+                }
+            }
         }
+        Optional<Player> highestScore = Arrays.stream(players)
+                    .max(Comparator.comparing(Player::getScore));
+        System.out.println(highestScore);
+        String playerName = highestScore.map(g -> g.name).toString().replace("Optional","").replace("[","").replace("]","");
+        System.out.println(playerName + " wins");
+        result = GameResult.playerWins;
+        System.out.println(result);
         return result;
     }
 

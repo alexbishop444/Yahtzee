@@ -6,6 +6,22 @@ public class Player {
 
     Bucket bucket;
 
+    @Override
+    public String toString() {
+        return "Player{" +
+                "score=" + score +
+                ", bucket=" + bucket +
+                ", name='" + name + '\'' +
+                ", scoreCard=" + scoreCard +
+                '}';
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    String name;
+
     ScoreCard scoreCard = new ScoreCard();
 
     public Bucket getDeck() {
@@ -14,6 +30,11 @@ public class Player {
 
     public Player() {
         this.bucket = new Bucket();
+    }
+
+    public Player[] convertArrayToPrimitive(ArrayList<Player> arr) {
+        Player[] arr2 = arr.toArray(new Player[arr.size()]);
+        return arr2;
     }
 
     public boolean isScoringCategoryUsed(ScoringCategory category) {

@@ -1,7 +1,6 @@
 public enum GameResult {
     none,
-    playerOneWins,
-    playerTwoWins,
+    playerWins,
     draw,
     playing
 }
