@@ -7,7 +7,8 @@ public class GameLoop {
     private boolean turn;
     private GameResult gameState;
     private Scanner scanner = new Scanner(System.in);
-    private ScoringCombinations score;
+//    private ScoringCombinations score;
+    ScoringCombinations score = new ScoringCombinations();
     private Player playerOne = new Player();
     private Player playerTwo = new Player();
 
@@ -36,11 +37,11 @@ public class GameLoop {
         System.out.println("These are your dice.");
         System.out.println(Arrays.toString(player.bucket.getDice()));
         printOutScoreCategories(player);
-        changeHeld(player);
+//        changeHeld(player);
         // end for loop
         getPlayerCategorySelectionAndCalculate(player);
         System.out.println("Your total score is:" + player.score);
-        if (playerTwo.scoreCard.isGameOver() && playerOne.scoreCard.isGameOver()) {
+        if (player.scoreCard.checkPlayersScoreCards(playerArray)) {
             returnGameResult(playerArray);
             System.out.println("Game over");
             gameOver = true;
@@ -81,11 +82,11 @@ public class GameLoop {
         }
         Optional<Player> highestScore = Arrays.stream(players)
                     .max(Comparator.comparing(Player::getScore));
-        System.out.println(highestScore);
+//        System.out.println(highestScore);
         String playerName = highestScore.map(g -> g.name).toString().replace("Optional","").replace("[","").replace("]","");
         System.out.println(playerName + " wins");
         result = GameResult.playerWins;
-        System.out.println(result);
+//        System.out.println(result);
         return result;
     }
 

@@ -21,7 +21,7 @@ public class GameLoopTests {
 //    }
     @Test
     public void winningPlayerOneTest() {
-        playerOne.score = 34;
+        playerOne.score = 36;
         playerOne.name = "alex";
         playerTwo.score = 34;
         playerTwo.name = "nick";
