@@ -9,26 +9,45 @@ public class GameLoop {
     private Scanner scanner = new Scanner(System.in);
 //    private ScoringCombinations score;
     ScoringCombinations score = new ScoringCombinations();
-    private Player playerOne = new Player();
-    private Player playerTwo = new Player();
+    private Player playerOne = new Player("name");
 
-    public GameLoop(IScoringCombinations scoringCombinations, Player[] players, int numberOfRerolls) {
+    public GameLoop(IScoringCombinations scoringCombinations, int numberOfRerolls) {
 //        runGame(players);
     }
 
-    public void runGame(Player[] players) {
+
+    public void runGame() {
+        Player[] players = createPlayers();
         gameState = GameResult.playing;
         System.out.println("Welcome to Yahtzee, Player one it is your turn");
         do {
-            if(!turn) {
-                System.out.println("Player one it is your turn");
-                playerTurn(players[0],players);
-            }
-            else {
-                System.out.println("Player two it is your turn");
-                playerTurn(players[1],players);
+            for (int i = 0; i < players.length ; i++) {
+
+                if (!turn) {
+                    System.out.println(players[i].name + "s turn");
+                    playerTurn(players[i], players);
+                } else {
+                    System.out.println(players[i].name + "s turn");
+                    playerTurn(players[i], players);
+                }
             }
         }while(!gameOver);
+    }
+
+    public Player[] createPlayers() {
+        boolean loop = true;
+        ArrayList<Player> playerArrayList = new ArrayList<>();
+        do {
+            System.out.println("What is your name");
+            String name = scanner.nextLine();
+            playerArrayList.add(new Player(name));
+            System.out.println("Continue making players, y or n?");
+            String choice = scanner.nextLine();
+            if (choice.equals("n")) {
+                loop = false;
+            }
+        }while(loop);
+        return playerOne.convertArrayToPrimitive(playerArrayList);
     }
 
     private void playerTurn(Player player, Player[] playerArray) {

@@ -6,7 +6,7 @@ import static org.mockito.Mockito.when;
 
 public class ScoringCombinationTests {
     ScoringCombinations game = new ScoringCombinations();
-    Player player = new Player();
+    Player player = new Player("name");
     @Test
     public void mockChanceToReturn100() {
         Dice[] hand = {
