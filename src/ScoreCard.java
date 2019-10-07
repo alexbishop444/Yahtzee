@@ -45,4 +45,13 @@ public class ScoreCard {
         return true;
     }
 
+    public boolean checkPlayersScoreCards(Player[] players) {
+        for (Player player:players) {
+           if (!player.scoreCard.isGameOver()) {
+               return false;
+           }
+        }
+        return true;
+    }
+
 }
