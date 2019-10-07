@@ -7,8 +7,10 @@ import java.util.Arrays;
 public class GameLoopTests {
     ScoringCombinations scoringCombinations = new ScoringCombinations();
     ArrayList<Player> players = new ArrayList<>();
-    Player playerOne = new Player("name");
-    Player playerTwo = new Player("name");
+    Player playerOne = new Player("alex");
+    Player playerTwo = new Player("nick");
+    Player playerThree = new Player("matt");
+    Player playerFour = new Player("sofia");
 
 //    @Test
 //    public void winningPlayerTwoTest() {
@@ -21,12 +23,14 @@ public class GameLoopTests {
 //    }
     @Test
     public void winningPlayerOneTest() {
-        playerOne.score = 36;
-        playerOne.name = "alex";
-        playerTwo.score = 34;
-        playerTwo.name = "nick";
+        playerOne.score = 1;
+        playerTwo.score = 1;
+        playerThree.score = 1;
+        playerFour.score = 1;
         players.add(playerOne);
         players.add(playerTwo);
+        players.add(playerThree);
+        players.add(playerFour);
         Player[] test = playerOne.convertArrayToPrimitive(players);
         GameLoop game = new GameLoop(scoringCombinations,3);
 //        System.out.println(Arrays.toString(test));

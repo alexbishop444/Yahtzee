@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.Stream;
 
 public class GameLoop {
 
@@ -9,7 +8,7 @@ public class GameLoop {
     private Scanner scanner = new Scanner(System.in);
 //    private ScoringCombinations score;
     ScoringCombinations score = new ScoringCombinations();
-    private Player playerOne = new Player("name");
+    private Player player = new Player("name");
 
     public GameLoop(IScoringCombinations scoringCombinations, int numberOfRerolls) {
 //        runGame(players);
@@ -19,7 +18,7 @@ public class GameLoop {
     public void runGame() {
         Player[] players = createPlayers();
         gameState = GameResult.playing;
-        System.out.println("Welcome to Yahtzee, Player one it is your turn");
+        System.out.println("Welcome to Yahtzee");
         do {
             for (int i = 0; i < players.length ; i++) {
 
@@ -47,7 +46,7 @@ public class GameLoop {
                 loop = false;
             }
         }while(loop);
-        return playerOne.convertArrayToPrimitive(playerArrayList);
+        return player.convertArrayToPrimitive(playerArrayList);
     }
 
     private void playerTurn(Player player, Player[] playerArray) {
@@ -90,22 +89,28 @@ public class GameLoop {
 
     public GameResult returnGameResult(Player[] players) {
         GameResult result = GameResult.none;
-        Object[] scores = Arrays.stream(players).map(g -> g.score).toArray();
-        for (int i = 0; i < scores.length; i++) {
-            for (int j = i + 1; j < scores.length; j++) {
-                if (scores[i] == (scores[j])) {
-                    System.out.println("It's a draw!");
-                   return GameResult.draw;
+        Integer sameNumber = 0;
+        Object[] playerScores = Arrays.stream(players).map(player -> player.score).toArray();
+        for (int i = 0; i < playerScores.length; i++) {
+            for (int j = i + 1; j < playerScores.length; j++) {
+                if (playerScores[i] == (playerScores[j])) {
+                    sameNumber = Integer.parseInt(playerScores[i].toString());
+                    break;
                 }
             }
         }
-        Optional<Player> highestScore = Arrays.stream(players)
+        Optional<Player> highestScoringPlayer = Arrays.stream(players)
                     .max(Comparator.comparing(Player::getScore));
-//        System.out.println(highestScore);
-        String playerName = highestScore.map(g -> g.name).toString().replace("Optional","").replace("[","").replace("]","");
+        Integer highestPlayerScore = Integer.parseInt(highestScoringPlayer.map(player -> player.score).toString().replace("Optional","").replace("[","").replace("]",""));
+        String playerName = highestScoringPlayer.map(player -> player.name).toString().replace("Optional","").replace("[","").replace("]","");
+//        System.out.println(highestPlayerScore);
+//        System.out.println(sameNumber);
+        if(highestPlayerScore.equals(sameNumber)) {
+            System.out.println("It's a draw");
+            return GameResult.draw;
+        }
         System.out.println(playerName + " wins");
         result = GameResult.playerWins;
-//        System.out.println(result);
         return result;
     }
 
