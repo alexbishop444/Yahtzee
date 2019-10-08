@@ -36,7 +36,7 @@ public class GameLoop {
     }
 
     public Player[] createPlayers() {
-        boolean loop = true;
+        boolean loop = true; // is this generic name alright?
         ArrayList<Player> playerArrayList = new ArrayList<>();
         do {
             System.out.println("What is your name");

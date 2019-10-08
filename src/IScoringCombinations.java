@@ -1,3 +1,3 @@
 public interface IScoringCombinations {
-    int chance(Dice[] arr, Player player);
+    int chance(Player player);
 }

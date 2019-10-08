@@ -9,204 +9,169 @@ public class ScoringCombinationTests {
     Player player = new Player("name");
     @Test
     public void mockChanceToReturn100() {
-        Dice[] hand = {
-                new Dice(true,2),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,1),
-                new Dice(true,6),
-        };
+        player.bucket.getDice()[0] = new Dice(true,3);
+        player.bucket.getDice()[1] = new Dice(true,3);
+        player.bucket.getDice()[2] = new Dice(true,3);
+        player.bucket.getDice()[3] = new Dice(true,3);
+        player.bucket.getDice()[4] = new Dice(true,3);
+
         ScoringCombinations mockedScoringCombinations = mock(ScoringCombinations.class);
-        when(mockedScoringCombinations.chance(hand,player)).thenReturn(100);
-        System.out.println(mockedScoringCombinations.chance(hand,player));
+        when(mockedScoringCombinations.chance(player)).thenReturn(100);
+        System.out.println(mockedScoringCombinations.chance(player));
     }
     @Test
     public void yahtzeeTest_unhappy() {
-        Dice[] hand = {
-                new Dice(true,1),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-        };
+        player.bucket.getDice()[0] = new Dice(true,3);
+        player.bucket.getDice()[1] = new Dice(true,3);
+        player.bucket.getDice()[2] = new Dice(true,3);
+        player.bucket.getDice()[3] = new Dice(true,3);
+        player.bucket.getDice()[4] = new Dice(true,2);
         int expected = 0;
 
-        yahtzeeTestRunner(hand, expected);
+        Assert.assertEquals(game.yahtzee(player),expected);
     }
 
     @Test
     public void yahtzeeTest() {
 
-        Dice[] hand = {
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-        };
+        player.bucket.getDice()[0] = new Dice(true,3);
+        player.bucket.getDice()[1] = new Dice(true,3);
+        player.bucket.getDice()[2] = new Dice(true,3);
+        player.bucket.getDice()[3] = new Dice(true,3);
+        player.bucket.getDice()[4] = new Dice(true,3);
         int expected = 50;
-        yahtzeeTestRunner(hand, expected);
 
-    }
+        Assert.assertEquals(game.yahtzee(player),expected);
 
-    private void yahtzeeTestRunner(Dice[] hand, int expected)
-    {
-        int actual = game.yahtzee(hand,player);
-        Assert.assertEquals(expected,actual);
     }
 
     @Test
     public void addUpSameNumbersTestFour() {
-        Dice[] hand = {
-                new Dice(true,4),
-                new Dice(true,4),
-                new Dice(true,4),
-                new Dice(true,5),
-                new Dice(true,5),
-        };
+        player.bucket.getDice()[0] = new Dice(true,3);
+        player.bucket.getDice()[1] = new Dice(true,4);
+        player.bucket.getDice()[2] = new Dice(true,4);
+        player.bucket.getDice()[3] = new Dice(true,4);
+        player.bucket.getDice()[4] = new Dice(true,3);
         int expected = 12;
-        int actual = game.addUpSameNumbers(hand,ScoringCategory.FOURS,player);
+        int actual = game.addUpSameNumbers(ScoringCategory.FOURS,player);
         Assert.assertEquals(expected,actual);
     }
     @Test
     public void addUpSameNumbersTestOnes() {
-        Dice[] hand = {
-                new Dice(true,1),
-                new Dice(true,1),
-                new Dice(true,6),
-                new Dice(true,3),
-                new Dice(true,4),
-        };
+        player.bucket.getDice()[0] = new Dice(true,3);
+        player.bucket.getDice()[1] = new Dice(true,1);
+        player.bucket.getDice()[2] = new Dice(true,1);
+        player.bucket.getDice()[3] = new Dice(true,3);
+        player.bucket.getDice()[4] = new Dice(true,3);
         int expected = 2;
-        int actual = game.addUpSameNumbers(hand,ScoringCategory.ONES,player);
+        int actual = game.addUpSameNumbers(ScoringCategory.ONES,player);
         Assert.assertEquals(expected,actual);
     }
     @Test
     public void addUpSameNumbersTestFives() {
-        Dice[] hand = {
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-        };
-        int expectedFive = 25;
-        int actualFive = game.addUpSameNumbers(hand,ScoringCategory.FIVES,player);
-        Assert.assertEquals(expectedFive,actualFive);
+        player.bucket.getDice()[0] = new Dice(true,5);
+        player.bucket.getDice()[1] = new Dice(true,5);
+        player.bucket.getDice()[2] = new Dice(true,5);
+        player.bucket.getDice()[3] = new Dice(true,5);
+        player.bucket.getDice()[4] = new Dice(true,5);
+        int expected = 25;
+        int actualFive = game.addUpSameNumbers(ScoringCategory.FIVES,player);
+        Assert.assertEquals(expected,actualFive);
 
     }
     @Test
     public void pairTest() {
-
-        Dice[] hand = {
-                new Dice(true,2),
-                new Dice(true,2),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,6),
-        };
-        int expectedOnePair = 10;
-        int actualOnePair = game.pair(hand);
-        Assert.assertEquals(expectedOnePair,actualOnePair);
+        player.bucket.getDice()[0] = new Dice(true,3);
+        player.bucket.getDice()[1] = new Dice(true,3);
+        player.bucket.getDice()[2] = new Dice(true,3);
+        player.bucket.getDice()[3] = new Dice(true,3);
+        player.bucket.getDice()[4] = new Dice(true,3);
+        int expected = 6;
+        int actualOnePair = game.pair(player);
+        Assert.assertEquals(expected,actualOnePair);
     }
     @Test
     public void twoPairTest() {
-
-        Dice[] hand = {
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,4),
-                new Dice(true,4),
-                new Dice(true,2),
-        };
-        int expectedOnePair = 18;
-        int actualOnePair = game.twoPair(hand);
-        Assert.assertEquals(expectedOnePair,actualOnePair);
+        player.bucket.getDice()[0] = new Dice(true,2);
+        player.bucket.getDice()[1] = new Dice(true,2);
+        player.bucket.getDice()[2] = new Dice(true,3);
+        player.bucket.getDice()[3] = new Dice(true,3);
+        player.bucket.getDice()[4] = new Dice(true,3);
+        int expected = 10;
+        int actualOnePair = game.twoPair(player);
+        Assert.assertEquals(expected,actualOnePair);
 
     }
     @Test
     public void threeOfAKindTest() {
-
-        Dice[] hand = {
-                new Dice(true,2),
-                new Dice(true,2),
-                new Dice(true,2),
-                new Dice(true,1),
-                new Dice(true,1),
-        };
-        int expected =6;
-        int actual = game.threeOfAKind(hand);
+        player.bucket.getDice()[0] = new Dice(true,3);
+        player.bucket.getDice()[1] = new Dice(true,3);
+        player.bucket.getDice()[2] = new Dice(true,3);
+        player.bucket.getDice()[3] = new Dice(true,3);
+        player.bucket.getDice()[4] = new Dice(true,3);
+        int expected = 9;
+        int actual = game.threeOfAKind(player);
         Assert.assertEquals(expected,actual);
 
     }
     @Test
     public void fourOfAKindTest() {
-        Dice[] hand = {
-                new Dice(true,3),
-                new Dice(true,3),
-                new Dice(true,3),
-                new Dice(true,3),
-                new Dice(true,5),
-        };
-        int expectedFour = 12;
-        int actualFour = game.fourOfAKind(hand);
-        Assert.assertEquals(expectedFour,actualFour);
+        player.bucket.getDice()[0] = new Dice(true,3);
+        player.bucket.getDice()[1] = new Dice(true,5);
+        player.bucket.getDice()[2] = new Dice(true,5);
+        player.bucket.getDice()[3] = new Dice(true,5);
+        player.bucket.getDice()[4] = new Dice(true,5);
+        int expected = 20;
+        int actualFour = game.fourOfAKind(player);
+        Assert.assertEquals(expected,actualFour);
 
     }
     // Same method below but was bugged when used in the same test? Not sure why!
     @Test
-    public void fourOfAkindTestPartTwo() {
+    public void fourOfAKindTestPartTwo() {
 
-        Dice[] hand = {
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-                new Dice(true,5),
-        };
-        int expectedOnePair = 20;
-        int actualOnePair = game.fourOfAKind(hand);
-        Assert.assertEquals(expectedOnePair,actualOnePair);
+        player.bucket.getDice()[0] = new Dice(true,2);
+        player.bucket.getDice()[1] = new Dice(true,2);
+        player.bucket.getDice()[2] = new Dice(true,2);
+        player.bucket.getDice()[3] = new Dice(true,2);
+        player.bucket.getDice()[4] = new Dice(true,2);
+        int expected = 8;
+        int actualOnePair = game.fourOfAKind(player);
+        Assert.assertEquals(expected,actualOnePair);
 
     }
 
     @Test
     public void smallStraightTest() {
-        Dice[] hand = {
-                new Dice(true,1),
-                new Dice(true,2),
-                new Dice(true,3),
-                new Dice(true,4),
-                new Dice(true,5),
-        };
-        int expectedWithStraight = 15;
-        int actualStraight = game.smallStraight(hand);
-        Assert.assertEquals(expectedWithStraight,actualStraight);
+        player.bucket.getDice()[0] = new Dice(true,1);
+        player.bucket.getDice()[1] = new Dice(true,2);
+        player.bucket.getDice()[2] = new Dice(true,3);
+        player.bucket.getDice()[3] = new Dice(true,4);
+        player.bucket.getDice()[4] = new Dice(true,5);
+        int expected = 15;
+        int actualStraight = game.smallStraight(player);
+        Assert.assertEquals(expected,actualStraight);
     }
     @Test
     public void largeStraightTest() {
-        Dice[] hand = {
-                new Dice(true,2),
-                new Dice(true,3),
-                new Dice(true,4),
-                new Dice(true,5),
-                new Dice(true,6),
-        };
-        int expectedStraight = 20;
-        int actualStraight = game.largeStraight(hand);
-        Assert.assertEquals(expectedStraight,actualStraight);
+        player.bucket.getDice()[0] = new Dice(true,2);
+        player.bucket.getDice()[1] = new Dice(true,3);
+        player.bucket.getDice()[2] = new Dice(true,4);
+        player.bucket.getDice()[3] = new Dice(true,5);
+        player.bucket.getDice()[4] = new Dice(true,6);
+        int expected = 20;
+        int actualStraight = game.largeStraight(player);
+        Assert.assertEquals(expected,actualStraight);
     }
     @Test
     public void fullHouseTest() {
-        Dice[] handNoHouse = {
-                new Dice(true,2),
-                new Dice(true,2),
-                new Dice(true,2),
-                new Dice(true,1),
-                new Dice(true,1),
-        };
-        int expectedNoHouse =8;
-        int actualNoHouse = game.fullHouse(handNoHouse);
-        Assert.assertEquals(expectedNoHouse,actualNoHouse);
+        player.bucket.getDice()[0] = new Dice(true,2);
+        player.bucket.getDice()[1] = new Dice(true,2);
+        player.bucket.getDice()[2] = new Dice(true,2);
+        player.bucket.getDice()[3] = new Dice(true,1);
+        player.bucket.getDice()[4] = new Dice(true,1);
+        int expected = 8;
+        int actual = game.fullHouse(player);
+        Assert.assertEquals(expected,actual);
     }
 }
