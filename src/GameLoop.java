@@ -6,13 +6,14 @@ public class GameLoop {
     private boolean turn;
     private GameResult gameState;
     private Scanner scanner = new Scanner(System.in);
-//    private ScoringCombinations score;
-    ScoringCombinations score = new ScoringCombinations();
+    private ScoringCombinations score;
+//    ScoringCombinations score = new ScoringCombinations();
     private Player player = new Player("name");
-    int numberOfRerolls;
+    private int numberOfRerolls;
 
-    public GameLoop(IScoringCombinations scoringCombinations, int numberOfRerolls) {
+    public GameLoop(ScoringCombinations scoringCombinations, int numberOfRerolls) {
     this.numberOfRerolls = numberOfRerolls;
+    this.score = scoringCombinations;
     }
 
 
@@ -56,7 +57,7 @@ public class GameLoop {
         System.out.println("These are your dice.");
         System.out.println(Arrays.toString(player.bucket.getDice()));
         printOutScoreCategories(player);
-        changeHeld(player);
+        changeDiceHeld(player);
         printOutScoreCategories(player);
         // end for loop
         getPlayerCategorySelectionAndCalculate(player);
@@ -85,7 +86,7 @@ public class GameLoop {
         player.bucket.rollDice();
     }
 
-    public GameResult GetGameState() {
+    public GameResult getGameState() {
         return gameState;
     }
 
@@ -114,7 +115,7 @@ public class GameLoop {
         return result;
     }
 
-    public void changeHeld(Player player) {
+    public void changeDiceHeld(Player player) {
             for (int i = 0; i < numberOfRerolls; i++) {
 
 
@@ -135,13 +136,12 @@ public class GameLoop {
                 if(i == numberOfRerolls - 1) {
                     break;
                 }
-                    System.out.println("Change again you have " + (i - numberOfRerolls + 1) + " turns remaining");
+                    System.out.println("Change again you have " + (i - numberOfRerolls + 1) + " turns remaining or type n to choose score option");
                     String playerInput = scanner.nextLine();
                     if (playerInput.equals("n")) {
                         break;
                     }
             }
-            //Changes dice that need to be rolled again statuses to held: false, returns the updated array.
     }
 
 

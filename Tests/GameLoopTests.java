@@ -1,8 +1,11 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class GameLoopTests {
     ScoringCombinations scoringCombinations = new ScoringCombinations();
@@ -51,4 +54,15 @@ public class GameLoopTests {
 //        System.out.println(Arrays.toString(test));
         Assert.assertEquals(GameResult.draw,game.returnGameResult(test));
     }
+//    @Test
+//    public void heldTest() {
+//        GameLoop game = new GameLoop(scoringCombinations,3);
+//        game.changeDiceHeld(playerOne);
+//    }
+//    @Test
+//    public void gamePlayingTest() {
+//        GameLoop game = new GameLoop(scoringCombinations,3);
+//        game.runGame();
+//        Assert.assertEquals(GameResult.playing,game.getGameState());
+//    }
 }
