@@ -57,7 +57,7 @@ public class GameLoopTests {
 //    @Test
 //    public void heldTest() {
 //        GameLoop game = new GameLoop(scoringCombinations,3);
-//        game.changeDiceHeld(playerOne);
+//        game.setDiceToHeld(playerOne);
 //    }
 //    @Test
 //    public void gamePlayingTest() {

@@ -57,7 +57,7 @@ public class GameLoop {
         System.out.println("These are your dice.");
         System.out.println(Arrays.toString(player.bucket.getDice()));
         printOutScoreCategories(player);
-        changeDiceHeld(player);
+        setDiceToHeld(player);
         printOutScoreCategories(player);
         // end for loop
         getPlayerCategorySelectionAndCalculate(player);
@@ -115,30 +115,29 @@ public class GameLoop {
         return result;
     }
 
-    public void changeDiceHeld(Player player) {
+    public void setDiceToHeld(Player player) {
             for (int i = 0; i < numberOfRerolls; i++) {
 
 
                 System.out.println("Choose dice to hold, others will be re-rolled");
 
-                char[] charArray = scanner.nextLine().replace(",", "").toCharArray(); //index numbers
-                int[] intArray = new int[charArray.length];
+                char[] playerInputToSelectDice = scanner.nextLine().replace(",", "").toCharArray();
+                int[] selectedDice = new int[playerInputToSelectDice.length];
 
-                for (int j = 0; j < charArray.length; j++) {
-                    intArray[j] = Character.getNumericValue(charArray[j]) - 1;
+                for (int j = 0; j < playerInputToSelectDice.length; j++) {
+                    selectedDice[j] = Character.getNumericValue(playerInputToSelectDice[j]) - 1;
                 }
 
-                player.bucket.SetHeldDice(intArray);
+                player.bucket.SetHeldDice(selectedDice);
                 player.bucket.rollDice();
 
-                Dice[] dice = player.bucket.getDice();
-                System.out.println(Arrays.toString(dice));
+                System.out.println(Arrays.toString(player.bucket.getDice()));
                 if(i == numberOfRerolls - 1) {
                     break;
                 }
                     System.out.println("Change again you have " + (i - numberOfRerolls + 1) + " turns remaining or type n to choose score option");
-                    String playerInput = scanner.nextLine();
-                    if (playerInput.equals("n")) {
+                    String playerInputToEndLoop = scanner.nextLine();
+                    if (playerInputToEndLoop.equals("n")) {
                         break;
                     }
             }
