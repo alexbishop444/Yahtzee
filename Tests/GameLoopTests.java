@@ -24,7 +24,7 @@ public class GameLoopTests {
     @Test
     public void winningPlayerOneTest() {
         playerOne.score = 1;
-        playerTwo.score = 1;
+        playerTwo.score = 2;
         playerThree.score = 1;
         playerFour.score = 1;
         players.add(playerOne);
@@ -34,15 +34,21 @@ public class GameLoopTests {
         Player[] test = playerOne.convertArrayToPrimitive(players);
         GameLoop game = new GameLoop(scoringCombinations,3);
 //        System.out.println(Arrays.toString(test));
-        game.returnGameResult(test);
+        Assert.assertEquals(GameResult.playerWins,game.returnGameResult(test));
     }
-//    @Test
-//    public void drawTest() {
-//        GameLoop gameLoop = new GameLoop();
-//        player.score = 400;
-//        playerTwo.score = 400;
-//        GameResult expected = GameResult.draw;
-//        GameResult actual = gameLoop.returnGameResult(player,playerTwo);
-//        Assert.assertEquals(expected,actual);
-//    }
+    @Test
+    public void drawTest() {
+        playerOne.score = 22;
+        playerTwo.score = 45;
+        playerThree.score = 45;
+        playerFour.score = 22;
+        players.add(playerOne);
+        players.add(playerTwo);
+        players.add(playerThree);
+        players.add(playerFour);
+        Player[] test = playerOne.convertArrayToPrimitive(players);
+        GameLoop game = new GameLoop(scoringCombinations,3);
+//        System.out.println(Arrays.toString(test));
+        Assert.assertEquals(GameResult.draw,game.returnGameResult(test));
+    }
 }

@@ -9,9 +9,10 @@ public class GameLoop {
 //    private ScoringCombinations score;
     ScoringCombinations score = new ScoringCombinations();
     private Player player = new Player("name");
+    int numberOfRerolls;
 
     public GameLoop(IScoringCombinations scoringCombinations, int numberOfRerolls) {
-//        runGame(players);
+    this.numberOfRerolls = numberOfRerolls;
     }
 
 
@@ -55,7 +56,8 @@ public class GameLoop {
         System.out.println("These are your dice.");
         System.out.println(Arrays.toString(player.bucket.getDice()));
         printOutScoreCategories(player);
-//        changeHeld(player);
+        changeHeld(player);
+        printOutScoreCategories(player);
         // end for loop
         getPlayerCategorySelectionAndCalculate(player);
         System.out.println("Your total score is:" + player.score);
@@ -89,12 +91,12 @@ public class GameLoop {
 
     public GameResult returnGameResult(Player[] players) {
         GameResult result = GameResult.none;
-        Integer sameNumber = 0;
+        Integer duplicateScore = 0;
         Object[] playerScores = Arrays.stream(players).map(player -> player.score).toArray();
         for (int i = 0; i < playerScores.length; i++) {
             for (int j = i + 1; j < playerScores.length; j++) {
                 if (playerScores[i] == (playerScores[j])) {
-                    sameNumber = Integer.parseInt(playerScores[i].toString());
+                    duplicateScore = Integer.parseInt(playerScores[i].toString());
                     break;
                 }
             }
@@ -103,9 +105,7 @@ public class GameLoop {
                     .max(Comparator.comparing(Player::getScore));
         Integer highestPlayerScore = Integer.parseInt(highestScoringPlayer.map(player -> player.score).toString().replace("Optional","").replace("[","").replace("]",""));
         String playerName = highestScoringPlayer.map(player -> player.name).toString().replace("Optional","").replace("[","").replace("]","");
-//        System.out.println(highestPlayerScore);
-//        System.out.println(sameNumber);
-        if(highestPlayerScore.equals(sameNumber)) {
+        if(highestPlayerScore.equals(duplicateScore)) {
             System.out.println("It's a draw");
             return GameResult.draw;
         }
@@ -115,19 +115,32 @@ public class GameLoop {
     }
 
     public void changeHeld(Player player) {
-        System.out.println("Choose dice to hold, others will be re-rolled");
+            for (int i = 0; i < numberOfRerolls; i++) {
 
-        char[] charArray = scanner.nextLine().replace(",","").toCharArray(); //index numbers
-        int[] intArray = new int[charArray.length];
 
-        for (int i = 0; i < charArray.length; i++){
-            intArray[i] = Character.getNumericValue(charArray[i]) - 1;
-        }
+                System.out.println("Choose dice to hold, others will be re-rolled");
 
-        player.bucket.SetHeldDice(intArray);
+                char[] charArray = scanner.nextLine().replace(",", "").toCharArray(); //index numbers
+                int[] intArray = new int[charArray.length];
 
-        Dice[] dice = player.bucket.getDice();
-        System.out.println(Arrays.toString(dice));
+                for (int j = 0; j < charArray.length; j++) {
+                    intArray[j] = Character.getNumericValue(charArray[j]) - 1;
+                }
+
+                player.bucket.SetHeldDice(intArray);
+                player.bucket.rollDice();
+
+                Dice[] dice = player.bucket.getDice();
+                System.out.println(Arrays.toString(dice));
+                if(i == numberOfRerolls - 1) {
+                    break;
+                }
+                    System.out.println("Change again you have " + (i - numberOfRerolls + 1) + " turns remaining");
+                    String playerInput = scanner.nextLine();
+                    if (playerInput.equals("n")) {
+                        break;
+                    }
+            }
             //Changes dice that need to be rolled again statuses to held: false, returns the updated array.
     }
 
